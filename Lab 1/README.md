@@ -98,7 +98,8 @@ Think about the setting of the device: is the environment a place where the devi
 
 
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
- We intended the device to have a look that could intuitively imply it has something to do with the pet. So even the first-time users can go check the dog when they notice the lighting. We went with the rounded bone shape which is simple yet has enough space in the middle for a lighting panel, and a good weight-balance. This cute shape could also arouse some sympathy to go take care of the dog as soon as possible. 
+  We intended the device to have a look that could intuitively imply that it has something to do with the pet. So even the first-time users can go check the dog when they notice the lighting. We went with the rounded bone shape which is simple yet has enough space in the middle for a lighting panel, and a good weight-balance. We intended the shape to be something cute rather than an emotionless shape like a rectangle. This could arouse some sympathy to go take care of the dog as soon as possible.  One of the major concerns was that we wanted to have a stable shape that can be placed on a desk easily. Also, the shape should have enough space for the lighting panel, which was the size of the phone screen in this case. 
+
 
 ## Part F. Record
 
@@ -108,7 +109,7 @@ link to the video: ([here](https://drive.google.com/file/d/1hVqco_DP4JWhl13JiXmM
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 
-Xinning Fang(xf49)
+Xinning Fang(xf49) Eunsol Soul Choi(ec897)
 
 
 
@@ -122,15 +123,39 @@ This describes the second week's work for this lab activity.
 You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
 
 \*\***Summarize feedback from your partners here.**\*\*
+To summarize, there are three points made in the feedback we got:
+1. Location of where the device should be put could be changed so that the device could be more noticeable.
+2. Light notification sometimes could be hard to notice, especially when it is daytime or other light sources are on. Hence, sound notification was mentioned in some feedback.
+3. If the pet finishes the food within a short period of time and if the light for food refill is on right after the food is finished, the pet could possibly be overfed.
 
 ## Make it your own
 
-Do last week’s assignment again, but this time: 
-1) It doesn’t have to (just) use light, 
-2) You can use any modality (e.g., vibration, sound) to prototype the behaviors! Again, be creative!
-3) We will be grading with an emphasis on creativity. 
+To address the three points mentioned in the previous section, we made the following improvements to our Doggolight device:
 
-\*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+- We placed the device at multiple locations so it is easier to be noticed by the user.
+    The placement of the device can be personalized. In our case, we considered the occasions when it’s easy to forget about feeding the pet. So we put one on the desk where the user tends to work by, one on the door for when the user is leaving without refilling the water/food. On top of those two places, we also considered usability, so we placed one near the water dispenser where the user gets water for himself. 
+
+- We added a sound notification that will be triggered once every 10 min when it’s not in the “Do Not Disturb” period from 12 am to 7 am. 
+		  We got three feedback suggesting some additional auditory notification on top of the lighting. There were some concerns about the light being not so noticeable in the living space especially when there are other light sources on. So we added a sound notification to the device while keeping the light feature. Instead of a beeping sound, we added a voice notification for three different scenarios that correspond to the three colors the light will emit: “Please add water”, “Please add food” and “Please add food and water”. Specifying the instruction can prevent the user from having to check the color of the light or the emptiness of the bowl again after hearing the sound. 
+    Also, considering that the sound notification might be annoying when the user is asleep at night, we set a "Do Not Disturb" period. Within the period, no sound notification will be played. Instead, lights will be the only means of notification.
+     
+- We added a feature that takes the feeding intervals into account. Once the food is added, the sensor for the food bowl will sleep for 6 hours in case the pet finishes the food right away to ensure that the pet is not overfed.
+    This is also from one of the feedback we got mentioning the overfeeding problem in case the pet finishes the food in a really short amount of time. To prevent this from happening, we added a feature to the device that will have the food bowl sensor sleep for a certain amount of time, in our case 6 hours before detecting if the food bowl is empty the next time so that if the sound and the light for adding food is triggered, users could add food without worrying that their pets eat too much.
+    
+Revised storyboard: 
+![Untitled_Artwork](https://user-images.githubusercontent.com/42717070/133189614-231a9848-b91b-420b-91ea-99772f4317c7.jpg)
+
+
+
+
+[Link to the part 2 video](https://drive.google.com/file/d/1gWxkqxKGhHm_DhX-s7iESYY7CTBW16Ts/view?usp=sharing)
+
+While we kept the same costume for the device we had for part 1, we added new functions to the original design of the device. We staged the new interaction with the added sound notification, and with multiple locations of the device.
+
+These updates in the design also affected our way of video-taking. We had to record nine separate videos for the three locations and for each color of the light. 
+
+We also made some changes to the layout of the video. We showed the status of the bowls (food empty, water empty, both empty) before each scenario, and with the help of the sound notification, we used fewer subtitles that could be disturbing. Moreover, we added some explanations at the end of the video to show we have the feeding interval function and Do-not-disturb mode as well. 
+
 
 
 
