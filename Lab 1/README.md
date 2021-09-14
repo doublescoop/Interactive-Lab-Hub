@@ -105,7 +105,7 @@ Think about the setting of the device: is the environment a place where the devi
 
 \*\***Take a video of your prototyped interaction.**\*\*
 
-link to the video: ([here](https://drive.google.com/file/d/1hVqco_DP4JWhl13JiXmMFei8hyX8SEkT/view))
+([Link to the part 1 video](https://drive.google.com/file/d/1hVqco_DP4JWhl13JiXmMFei8hyX8SEkT/view))
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 
