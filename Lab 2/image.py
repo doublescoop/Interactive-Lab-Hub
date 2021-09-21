@@ -75,9 +75,18 @@ draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
 image = Image.open("red.jpg")
+# image_other = Image.open("smallbabe.png")
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
+
+#button settings
+# buttonA = digitalio.DigitalInOut(board.D23)
+# buttonB = digitalio.DigitalInOut(board.D24)
+# buttonA.switch_to_input()
+# buttonB.switch_to_input()
+
+
 
 
 # Scale the image to the smaller screen dimension
@@ -99,3 +108,15 @@ image = image.crop((x, y, x + width, y + height))
 # Display image.
 disp.image(image)
 
+# Change image when the button clicked
+
+# while True:
+#     # if buttonA.value and buttonB.value:
+#     #     backlight.value = False  # turn off backlight
+#     # else:
+#     #     backlight.value = True  # turn on backlight
+#     if buttonB.value and not buttonA.value:  # just button A pressed
+#         disp.image(image_other) # set the screen to the users color
+#     if buttonA.value and not buttonB.value:  # just button B pressed
+#         disp.image(image_other)  # set the screen to white
+#

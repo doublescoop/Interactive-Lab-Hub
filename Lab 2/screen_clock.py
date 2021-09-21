@@ -72,6 +72,7 @@ buttonA.switch_to_input()
 buttonB.switch_to_input()
 
 
+<<<<<<< HEAD
 # Other 
 Menu = [ "Salmon", "Steak", "Salad", "Last Delivery", "Fancy Meal", "Via Crota","Katz",
 "Fasting!", "Korean", "Thai", "Pizza on 28th", "Cookshop", "Sandwich", "Soup" ,"HOTPOT",
@@ -85,8 +86,75 @@ while True:
     txt2 = "on the other side?"
     txt3 = "*press both at mealtime"
 
+=======
+messages = [
+    "Please have a nice day!",
+    "How are you?",
+    "Enjoy your time!",
+    "Focus on study.",
+    "Be strong!"
+]
+while True:
+    y = top
+    txt1 = "Up: time"
+    txt2 = "Bottom: time period"
+    txt3 = "Both: message"
+>>>>>>> 859fd8b1d88f25a27f49d28ee3e1a78b82456c09
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
+    draw.text((x, y), txt1, font=font, fill="#FFFFFF")
+    y += font.getsize(txt1)[1]
+    draw.text((x, y), txt2, font=font, fill="#FFFF00")
+    y += font.getsize(txt2)[1]
+    draw.text((x, y), txt3, font=font, fill="#0000FF")
 
+
+    hour = int(strftime("%H"))
+    if hour >= 0 and hour < 6:
+        period = 'midnight'
+        period_fill = "#FFFFFF"
+    elif hour >= 6 and hour < 12:
+        period = 'morning'
+        period_fill = "#7FFFD4"
+    elif hour >= 12 and hour < 18:
+        period = 'afternoon'
+        period_fill = "#FFA500"
+    elif hour >= 18 and hour < 24:
+        period = 'evening'
+        period_fill = "#0080FF"
+
+    currentTime = strftime("%m/%d/%Y %H:%M:%S")
+    sentence = choice(messages)
+    y = top
+
+    if buttonB.value and not buttonA.value:  # just button A pressed
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        draw.text((x, y), currentTime, font=font, fill="#FFFFFF")
+    if buttonA.value and not buttonB.value:  # just button B pressed
+        draw.rectangle((0, 0, width, height), outline=0, fill=period_fill)
+        draw.text((x, y), period, font=font, fill="#0000FF")
+    if not buttonA.value and not buttonB.value:  # none pressed
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        draw.text((x, y), sentence, font=font, fill="#FFFFFF")
+
+
+# while True:
+#     # Draw a black filled box to clear the image.
+#     draw.rectangle((0, 0, width, height), outline=0, fill=0)
+#
+#     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
+#
+#     # cmd = (strftime("%m/%d/%Y %H:%M:%S"), end="", flush=True)
+#     # TIME = ("\r", end="", flush=True)
+#
+#     TIME = "TIME: " + strftime("%m/%d/%Y %H:%M:%S")
+#
+#
+#     y = top
+#     draw.text((x, y), TIME, font=font, fill="#FFFFFF")
+#     # y += font.getsize(IP)[1]
+#     # draw.text((x, y), WTTR, font=font, fill="#FFFF00")
+
+<<<<<<< HEAD
     y = top
     draw.text((x, y), txt0, font=font, fill="#FFFFFF")
     y += font.getsize(txt0)[1]
@@ -170,6 +238,8 @@ while True:
         y += font.getsize(txt)[1]
         draw.text((x2, y), Whattoeat, font=font, fill="#FFFFFF")
 
+=======
+>>>>>>> 859fd8b1d88f25a27f49d28ee3e1a78b82456c09
 
  # Display image.
     disp.image(image, rotation)
