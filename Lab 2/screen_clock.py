@@ -6,7 +6,7 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from random import choice
-# import pytz, datetime
+import pytz, datetime
 from datetime import datetime, timedelta
 
 
