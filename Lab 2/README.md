@@ -150,6 +150,11 @@ While the main page shows the time of HERE & NOW,
 another page activated by the top button shows how the time was expressed by 'zodiac animals' in 18th Century in Korea. 
 For example, what's equivalent to what we know as 7A.M. - 9A.M. was the 'time for dragons to get ready for a morning fly.'
 
+Full table for how time was denoted and perceived back in the days:
+<img width="504" alt="time_animal" src="https://user-images.githubusercontent.com/42717070/134108387-6b432f8b-8fcf-49c9-9c5e-38fabf038dc7.png">
+
+
+
 Another page activated by the bottom button shows the geographical(spatial) relativity of time
 by printing the time on the otherside of the globe. I chose Seoul and London because my family lives there. 
 
