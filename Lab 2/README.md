@@ -188,7 +188,7 @@ I can add a function to start a timer from ZERO activated by some actions, to ga
 Modify the code from last week's lab to make a new visual interface for your new clock. You may [extend the Pi](Extending%20the%20Pi.md) by adding sensors or buttons, but this is not required.
 
 
-<Unpdates in the look>
+##### Unpdates in the look
 I changed the main display to show the time follwing the measurement of 18C in South Korea.
 For reference, top button will show the time of here & now. The bottom button will show the time on the other side of globe, Seoul and London. 
 The concept of highlighting the relativity of time over time and space remains the same. 
@@ -198,15 +198,12 @@ I updated the background colors and font colors for better visibility. The backg
 https://user-images.githubusercontent.com/42717070/134823831-4721478d-d45b-45bb-971e-6a2f3072c068.MOV
   
   
-<Updates in the functions>
+##### Updates in the functions
 In attempt to start a timer with a button, I used the Qwwic button to measure the seconds from the last click. 
-Seconds measured by honey-bee flip-flaps. FYI: Bees flip their wings 200 times a second :0 
-
-<<<<<<< HEAD
+Seconds measured by honey-bee flip-flaps. FYI: Bees flip their wings 200 times a second.
+  
 related codes are in file 'qwiicbutton.py' 
 
-=======
->>>>>>> 54727b92be1c5c63552c9d1a43b2460ec51a07bf
 https://user-images.githubusercontent.com/42717070/134824279-188d17b7-1ecc-4975-9423-51513946ed78.MOV
 
 
