@@ -153,8 +153,7 @@ For example, what's equivalent to what we know as 7A.M. - 9A.M. was the 'time fo
 
 Full table for how time was denoted and perceived back in the days:
 
-<img width="504" alt="time_animal" src="https://user-images.githubusercontent.com/42717070/134108387-6b432f8b-8fcf-49c9-9c5e-38fabf038dc7.png">
-
+<img width="504" alt="lab2_time_animal" src="https://user-images.githubusercontent.com/42717070/134823810-731a22c8-6ff0-4b7d-b8ae-29a11e133d3d.png">
 
 
 Another page activated by the bottom button shows the geographical(spatial) relativity of time
@@ -186,12 +185,29 @@ I can add a function to start a timer from ZERO activated by some actions, to ga
 
 # Lab 2 Part 2
 
-Pull Interactive Lab Hub updates to your repo.
-
 Modify the code from last week's lab to make a new visual interface for your new clock. You may [extend the Pi](Extending%20the%20Pi.md) by adding sensors or buttons, but this is not required.
 
-As always, make sure you document contributions and ideas from others explicitly in your writeup.
 
-You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
+<Unpdates in the look>
+I changed the main display to show the time follwing the measurement of 18C in South Korea.
+For reference, top button will show the time of here & now. The bottom button will show the time on the other side of globe, Seoul and London. 
+The concept of highlighting the relativity of time over time and space remains the same. 
+
+I updated the background colors and font colors for better visibility. The background color for the main display reflects the color of the sky on a clear day for that time period.
+
+https://user-images.githubusercontent.com/42717070/134823831-4721478d-d45b-45bb-971e-6a2f3072c068.MOV
+  
+  
+<Updates in the functions>
+In attempt to start a timer with a button, I used the Qwwic button to measure the seconds from the last click. 
+Seconds measured by honey-bee flip-flaps. FYI: Bees flip their wings 200 times a second :0 
+
+related codes are in file 'qwiicbutton.py' 
+
+https://user-images.githubusercontent.com/42717070/134824279-188d17b7-1ecc-4975-9423-51513946ed78.MOV
+
+
+
+
 
 

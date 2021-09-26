@@ -84,11 +84,14 @@ def run_example():
         
         y2 = height/2.5
         x2 = width/5
-        txt = str(my_button.time_since_last_click()/1000) + 'seconds'
+        txt = str(my_button.time_since_last_click()/1000*200) + ' bee flaps'
+        txt1 = str(my_button.time_since_last_click()/1000) + ' seconds'
         
         if my_button.is_button_pressed() == True:
             draw.rectangle((0, 0, width, height), outline=0, fill=0)
             draw.text((x2, y2), txt, font=font, fill="#FFFF00")
+            y2 += font.getsize(txt)[1]
+            draw.text((x2, y2), txt1, font=font, fill="#808080")
         
         disp.image(image, rotation)
         time.sleep(0.02)

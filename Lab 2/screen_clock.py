@@ -132,6 +132,7 @@ while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=period_fill)
     draw.text((x2, y), txt_top, font=font, fill="#FFFFFF")
     y2 += font.getsize(txt_top)[1]
+    x2 = width/6
     draw.text((x2, y2), animaltime, font=font, fill="#0000FF")
     y2 += (font.getsize(animaltime)[1])*2
     draw.text((x, y2), txt_bottom, font=font, fill="#808080")
