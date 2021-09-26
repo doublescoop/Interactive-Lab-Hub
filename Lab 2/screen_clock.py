@@ -6,7 +6,6 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 from random import choice
-import pytz, datetime
 from datetime import datetime, timedelta
 
 
@@ -82,24 +81,14 @@ while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 #
 #     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
-    y = top 
+    #positions
+    y = height/3
+    y2 = height/2.5
+    x2 = width/5
 
-    txt0 = "What Time Is It?"
-    TIME = "HERE, NOW: " + strftime("%m/%d %H:%M:%S")
-    txt1 = "in 18C?"
-    txt2 = "on the other side?"
-    txt3 = "*press both at mealtime"
-
-    draw.text((x, y), txt0, font=font, fill="#FFFFFF")
-    y += font.getsize(txt0)[1]
-    draw.text((x, y), TIME, font=font, fill="#FFFFFF")
-    y += font.getsize(TIME)[1]
-    draw.text((x, y), txt1, font=font, fill="#cde494")
-    y += font.getsize(txt1)[1]
-    draw.text((x, y), txt2, font=font, fill="#cde494")
-    y += font.getsize(txt2)[1] 
-    draw.text((x, y), txt3, font=font, fill="#333333")
-
+    #main texts for display
+    txt_top = "It's time for..."
+    txt_bottom = "*press both at mealtime"
 
     hour = int(strftime("%H"))
     if hour >= 0 and hour < 1 or hour >= 23:
@@ -136,8 +125,17 @@ while True:
         animaltime = 'Dogs on guard!'
         period_fill = "#003366"
     elif hour >= 21 and hour < 23:
-        animaltime = 'Time for piggies to go to bed'
+        animaltime = 'Piggies to go to bed'
         period_fill = "#003366"
+
+
+    draw.rectangle((0, 0, width, height), outline=0, fill=period_fill)
+    draw.text((x2, y), txt_top, font=font, fill="#FFFFFF")
+    y2 += font.getsize(txt_top)[1]
+    draw.text((x2, y2), animaltime, font=font, fill="#0000FF")
+    y2 += (font.getsize(animaltime)[1])*2
+    draw.text((x, y2), txt_bottom, font=font, fill="#808080")
+    
 
 
     # timeUTC = datetime.datetime.now()
@@ -147,32 +145,56 @@ while True:
     # SeoulTime= datetime.now() + timedelta(hours=13)
     # SEL="future: " + format(SeoulTime, '%a %p%H:%M:%S')
     
+    #reset the coordinates
+    y = height/3
     y2 = height/2.5
-    x2 = 2
+    x2 = width/5
     
 
 
     if buttonA.value and not buttonB.value:  # just button A pressed
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        TIME = "ON THE OTHER SIDE: " 
         SeoulTime= datetime.now() + timedelta(hours=13)
         LondonTime= datetime.now() + timedelta(hours=5)
         SEL="Seoul: " + format(SeoulTime, '%a %p%H:%M:%S') 
         LON="London: "+ format(LondonTime, '%a %p%H:%M:%S') 
-        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        draw.text((x,y), TIME, font=font, fill="#FFFFFF")
+        y += font.getsize(TIME)[1]
         draw.text((x, y), SEL, font=font, fill="#FFFFFF")
         y += font.getsize(SEL)[1]
-        draw.text((x2, y), LON, font=font, fill="#FFFFFF")
+        draw.text((x, y), LON, font=font, fill="#FFFFFF")
+
     if buttonB.value and not buttonA.value:  # just button B pressed
-        draw.rectangle((0, 0, width, height), outline=0, fill=period_fill)
-        draw.text((x2, y2), animaltime, font=font, fill="#0000FF")
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        TIME = "HERE, NOW: " 
+        txt1 = strftime("%m/%d %a %p%H:%M:%S")
+
+        # draw.text((x, y), txt0, font=font, fill="#FFFFFF")
+        # y += font.getsize(txt0)[1]
+        draw.text((x, y), TIME, font=font, fill="#FFFFFF")
+        y += font.getsize(TIME)[1]
+        draw.text((x2, y), txt1, font=font, fill="#FFFFFF")
+
+
     if not buttonA.value and not buttonB.value:  # both pressed
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
         Whattoeat = choice(Menu)
         txt = "Today's menu:"
-        draw.rectangle((0, 0, width, height), outline=0, fill=0)
         draw.text((x2, y2), txt, font=font, fill="#FFFF00")
-        y += font.getsize(txt)[1]
-        draw.text((x2, y), Whattoeat, font=font, fill="#FFFFFF")
+        y2 += font.getsize(txt)[1]
+        draw.text((x2, y2), Whattoeat, font=font, fill="#FFFFFF")
 
-
- # Display image.
+    # Display image.
     disp.image(image, rotation)
     time.sleep(1)
+
+
+
+
+
+
+
+
+
+
