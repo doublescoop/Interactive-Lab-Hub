@@ -202,8 +202,11 @@ https://user-images.githubusercontent.com/42717070/134823831-4721478d-d45b-45bb-
 In attempt to start a timer with a button, I used the Qwwic button to measure the seconds from the last click. 
 Seconds measured by honey-bee flip-flaps. FYI: Bees flip their wings 200 times a second :0 
 
+<<<<<<< HEAD
 related codes are in file 'qwiicbutton.py' 
 
+=======
+>>>>>>> 54727b92be1c5c63552c9d1a43b2460ec51a07bf
 https://user-images.githubusercontent.com/42717070/134824279-188d17b7-1ecc-4975-9423-51513946ed78.MOV
 
 
