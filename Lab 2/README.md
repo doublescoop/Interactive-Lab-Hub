@@ -199,15 +199,8 @@ https://user-images.githubusercontent.com/42717070/134823831-4721478d-d45b-45bb-
   
   
 ##### Updates in the functions
-In attempt to start a timer with a button, I used the Qwwic button to measure the seconds from the last click. 
-Seconds measured by honey-bee flip-flaps. FYI: Bees flip their wings 200 times a second.
-  
-related codes are in file 'qwiicbutton.py' 
-
-https://user-images.githubusercontent.com/42717070/134824279-188d17b7-1ecc-4975-9423-51513946ed78.MOV
-
-
-
+As a tribute to Einstein who discovred the General Relativity, I used the Qwwic button to show Einstein's famous portrait on the screen when the button is clicked. 
+It adds a wittiful, visual reminder of the relativity of time. 
 
 
 
