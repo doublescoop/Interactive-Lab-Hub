@@ -1,5 +1,51 @@
 # Interactive Prototyping: The Clock of Pi
 
+<<<<<<< HEAD
+=======
+Does it feel like time is moving strangely during this semester?
+
+For our first Pi project, we will pay homage to the [timekeeping devices of old](https://en.wikipedia.org/wiki/History_of_timekeeping_devices) by making simple clocks.
+
+It is worth spending a little time thinking about how you mark time, and what would be useful in a clock of your own design.
+
+**Please indicate anyone you collaborated with on this Lab here.**
+Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+
+## Prep
+
+[Lab prep](prep.md) is extra long this week! Make sure you read it over in time to prepare for lab on Thursday.
+
+### Get your kit
+If you are remote but in the US, let the teaching team know you need the parts mailed.
+
+
+If you are in New York, you can come to the campus and pick up your parts. If you have not picked up your parts by Thursday lab you should come to Tata 351.
+
+
+### Set up your Lab 2
+
+1. [Pull changes from the Interactive Lab Hub](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Fall/readings/Submitting%20Labs.md#to-pull-lab-updates) so that you have your own copy of Lab 2 on your own lab hub. (This may have to be done again at the start of lab on Thursday.)
+  
+  If you are organizing your Lab Hub through folder in local machine, go to terminal, cd into your Interactive-Lab-Hub folder and run:
+
+  ```
+  Interactive-Lab-Hub $ git remote add upstream https://github.com/FAR-Lab/Interactive-Lab-Hub.git
+  Interactive-Lab-Hub $ git pull upstream Fall2021
+  ```
+  
+  The reason why we are adding a upstream with **course lab-hub** instead of yours is because the local Interactive-Lab-Hub folder is linked with your own git repo already. Try typing ``git remote -v`` and you should see there is the origin branch with your own git repo. We here add the upstream to get latest updates from the teaching team by pulling the **course lab-hub** to your local machine. After your local folder got the latest updates, push them to your remote git repo by running:
+  
+  ```
+  Interactive-Lab-Hub $ git add .
+  Interactive-Lab-Hub $ git commit -m "message"
+  Interactive-Lab-Hub $ git push
+  ```
+  Your local and remote should now be up to date with the most recent files.
+
+2. Go to the [lab prep page](prep.md) to inventory your parts and set up your Pi before the lab session on Thursday.
+
+
+>>>>>>> b4f31bcf6c9d48655b13298e331b4c0ee4919ec7
 ## Overview
 For this assignment, you are going to 
 
@@ -126,6 +172,7 @@ Option 2. Another way for you to edit scripts is to use VNC on your laptop to re
 Now you should be able to edit python scripts with Thonny on your Pi.
 
 
+
 ## Part E.
 ### Modify the barebones clock to make it your own
 
@@ -134,6 +181,7 @@ Does time have to be linear?  How do you measure a year? [In daylights? In midni
 Can you make time interactive? You can look in `screen_test.py` for examples for how to use the buttons.
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
+
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
 
