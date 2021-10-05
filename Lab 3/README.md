@@ -108,13 +108,33 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
-Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
+I designed a device that can play a 'stroopgame' with the user. Strooptest is a neuropsychological test extensively used to assess the ability to inhibit cognitive interference that occurs when the processing of a specific stimulus feature impedes the simultaneous processing of a second stimulus attribute. In other words, it tests if you can tell the color of the _ink_ correctly when the word reads in different color. So you should say 'pink' when ou see the word 'Black' written in pink ink. 
+
+![IMG_2990](https://user-images.githubusercontent.com/42717070/135952704-f830590e-870d-47b2-b0f9-9ada32764370.jpg)
+
+
+Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses.
+
+Imagined dialogues are illustrated in the storyboard above. 
+Some alternative dialogues are depicted here:
+![IMG_2994](https://user-images.githubusercontent.com/42717070/135952713-1f4d767b-0734-4486-9dc4-36a9260848bd.jpg)
 
 \*\***Please describe and document your process.**\*\*
+![IMG_2995](https://user-images.githubusercontent.com/42717070/135952991-2d9d08cc-1977-4694-b9af-7ee12488274f.jpg)
+I contemplated on the original storyboard(dialogue script) to find and mark some alternative replies from the users. 
+I was able to imagine few alternative situations and narrow them down to few categories. 
+   1) user failed to understand the game and asks 'What?' / 'What did you say?' , asking for clarification
+   2) user gives half-correct answers in attempt to correct the first reply 
+   3) user gives repeated replies since he/she does not know if it's been recorded. I usually call 'Hey Siri' like two three times if it doesn't reply right away and later found out it was on mute but already heard me on the first attempt. Same might happen. 
 
 ### Acting out the dialogue
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
+
+
+https://user-images.githubusercontent.com/42717070/135952663-41951f1e-d67c-4b18-aa9f-14166516b219.mov
+
+
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
 
