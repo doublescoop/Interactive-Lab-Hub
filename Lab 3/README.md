@@ -55,6 +55,7 @@ You can also play audio files directly with `aplay filename`. Try typing `aplay 
 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
+Soul: You can find the shell file 'greetme.sh' 
 
 Bonus: If this topic is very exciting to you, you can try out this new TTS system we recently learned about: https://github.com/rhasspy/larynx
 
@@ -67,6 +68,10 @@ In particular, look at `test_words.py` and make sure you understand how the voca
 One thing you might need to pay attention to is the audio input setting of Pi. Since you are plugging the USB cable of your webcam to your Pi at the same time to act as speaker, the default input might be set to the webcam microphone, which will not be working for recording.
 
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
+
+Soul: You can find the shell file NumPatty.sh
+It asks you how many patties do you want in your burger. 
+You can answer in any number below ten (let's be realistic, you can't take more than ten, or even five)
 
 Bonus Activity:
 
@@ -112,6 +117,33 @@ Write out what you imagine the dialogue to be. Use cards, post-its, or whatever 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+
+I found some crucial differences in the interaction from what I imagined. 
+  1)User does not know what to do when Pi says 'Pick me up'
+    I imagined picking up the Pi device and holding it on her/his hand as the first engagement with the Pi. So I designed the Pi to repeatedly say 'Pick me up' until the user does so. However, during the act-out, the user was confused. User didn't expect to have a physical interaction with the device. Also, the user touched the device but didn't hold it in his hand.
+
+  2)User did not expect the game to start right away.
+    The design was to start the game right away after giving a one-sentence explanation. However, in the act-out, the user was not sure if the game has alreay begun even when he saw the screen(in the laptop, for this act-out). Therefore the user wasted first 6 seconds, which blew off the first round. 
+  
+  3)User does not know when the next round starts / how fast should he be.
+    The timing of user's reply and the device moving on to the next round was off. By the time the user replies, it was alerady moving on to the next question. I didn't realize there was no clear indication of how fast the user should be answering the question and when it'd move on to the next round.
+
+  4)User thought that repeated 'Pick me up' and 'Bye' at the end is kind of creepy. 
+    One-sided communication turned out to be too creepier than I thought. 
+
+  5)User replied 'Red' for the answer in the beginning, since the Pi box is red
+    User was asked to tell the Pi 'color of ink you see'. I intended to mean 'what he sees on the screen of Pi', not Pi itself. Unexpected layer of confusion.
+
+
+One thing I predicted right was:
+  User asked back 'What is Strooptest?' When Pi(me) said 'Let's play Strooptest, tell me a color of the ink you see' 
+
+
+\*\***Things I can improve in design, learned from the act-out**\*\*
+  1) Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement
+  2) Add a interaction to actively start the game, instead of automatic start 
+  3) Add a sign to let the user know when it's moving on to the next round or how many secs left in this roudn
+  4) Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to something like 'Let's play a game to test your cognitive ability! Tell me the color of the ink you see on the screen. Want to play?' 
 
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
