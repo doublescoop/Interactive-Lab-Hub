@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 import board
 import busio
-import adafruit_mpu6050
+from adafruit_apds9960.apds9960 import APDS9960
 import time
 import qwiic_button
 import sys
@@ -69,38 +69,34 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
-# # For the red and green LED buttons
-# buttonR = qwiic_button.QwiicButton(0x6f)
-# buttonG = qwiic_button.QwiicButton(0x60)
-# buttonR.begin()
-# buttonG.begin()
-# buttonR.LED_off()
-# buttonG.LED_off()
+# Initialize Green LED to visually signal players 
+# when they're correct
+buttonG = qwiic_button.QwiicButton()
 
-# For the  accelerometer 
-i2c = busio.I2C(board.SCL, board.SDA)
-mpu = adafruit_mpu6050.MPU6050(i2c)
-address = 0x68
 
-# sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
-# sensor.enable_proximity = True
+# Initialize accelerometer 
+# i2c = busio.I2C(board.SCL, board.SDA)
+# mpu = adafruit_mpu6050.MPU6050(i2c)
+# address = 0x68
 
-# # For the joystick
-# joystick = qwiic_joystick.QwiicJoystick()
-# joystick.begin()
+# Initialize proximity sensor to initiate the interaction
+i2c = board.I2C()   # uses board.SCL and board.SDA
+sensor = APDS9960(i2c)
+sensor.enable_proximity = True
+
 
 def speak(val):
     subprocess.run(["sh","GoogleTTS_demo.sh",val])
 
 def check_userinput():
-    os.system('arecord -D hw:2,0 -f cd -c1 -r 48000 -d 10 -t wav recorded_mono.wav')
+    os.system('arecord -D hw:2,0 -f cd -c1 -r 48000 -d 4 -t wav recorded_mono.wav')
     wf = wave.open("recorded_mono.wav", "rb")
 
     model = Model("model")
     # rec = KaldiRecognizer(model, wf.getframerate())
-    rec = KaldiRecognizer(model, wf.getframerate(), '["black","beige","blue","brown","green","grey","navy","orange","red","yellow"," [unk]"]')
+    rec = KaldiRecognizer(model, wf.getframerate())
+    #'["black","beige","blue","brown","green","grey","navy","orange","red","yellow","yes","start"," [unk]"]')
 
-        
     while True:
         data = wf.readframes(4000)
         if len(data) == 0:
@@ -109,228 +105,175 @@ def check_userinput():
 
     reply = json.loads(rec.FinalResult())
     print("User\'s reply: ", reply["text"])
-    return reply
+    return reply["text"]
 
-door1 = 0
-door2 = 0
-door3 = 0
-door4 = 0
+# def stopwatch(seconds):
+#     start = time.time()
+#     time.clock()    
+#     elapsed = 0
+#     while elapsed < seconds:
+#         elapsed = time.time() - start
+#         print ("loop cycle time: %f, seconds count: %02d % (time.clock() , elapsed)") 
+#         time.sleep(1)  
+#     return elapsed
 
 
 score = 0
 
-# while True:
-#     prox = sensor.proximity
-#     if prox > 10:
-#         main_image = Image.open("images/welcome.png")
-#         main_image = main_image.convert('RGB')
-#         main_image = main_image.resize((width, height), Image.BICUBIC)
-#         disp.image(main_image, rotation)
-#         handle_speak("Welcome to puzzle bot! You must solve 4 riddles to win. Use the joystick to navigate to each riddle. Remember to say your answer loudly and directly into the mike. Good luck!")
-#         break
-
-#begin interaction when picked up
 while True:
-    accel = mpu.acceleration
-    if accel == 0.0:
-        speak("Hi, pick me up! pick me up! ... Pat me, Pick me up!")
-    else:
-        main_image = Image.open("images/end.png")
+    prox = sensor.proximity
+    if prox > 10:
+        main_image = Image.open("images/a_pickmeup.png")
         main_image = main_image.convert('RGB')
         main_image = main_image.resize((width, height), Image.BICUBIC)
         disp.image(main_image, rotation)
-        speak("Let's do a stroop test!")
+        speak("Hi, pick me up!")
+        time.sleep(2)
         break
 
+#begin interaction when picked up
+# while True:
+#     gyro = mpu.gyro
+#     if gyro == 0.0:
+#         speak("Hi, pick me up! pick me up! ... Pat me, Pick me up!")
+#         if gyro != 0.0:
+#             break
 
 while True:
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    q1 = Image.open("images/black.png")
-    q1 = q1.convert('RGB')
-    q1 = q1.resize((width, height), Image.BICUBIC)
-    disp.image(q1, rotation)
-
-    reply = check_userinput()
-    if("black" in reply["text"]):
-        score += 1
-    
-    
-    q2 = Image.open("images/beige.png")
-    q2 = q2.convert('RGB')
-    q2 = q2.resize((width, height), Image.BICUBIC)
-    disp.image(q2, rotation)
-
-    reply = check_userinput()
-    if("beige" in reply["text"]):
-        score += 1
-
-
-
-    speak("your score is" + str(score) + "Not bad!")
-
-    break
-
-
-    
-    #     remaining_q = 10 - (door1+door2+door3+door4)
-    #     # buttonG.LED_on(150)
-    #     # handle_speak("Correct, next one")
-    #     door_image = Image.open("images/opendoor1.jpeg")
-    #     door_image = door_image.convert('RGB')
-    #     door_image = door_image.resize((width, height), Image.BICUBIC)
-    #     disp.image(door_image, rotation)
-    #     buttonG.LED_off()
-    # # else:
-    # #     # buttonR.LED_on(150)
-    # #     speak("Incorrect, push the joystick up to try again")
-    # #     buttonR.LED_off()
-
-
-
-
-    # ##############################up##############################
-
-    # # prox = sensor.proximity
-    # # if prox > 1:
-    # #     main_image = Image.open("images/welcome.png")
-    # #     main_image = main_image.convert('RGB')
-    # #     main_image = main_image.resize((width, height), Image.BICUBIC)
-    # #     disp.image(main_image, rotation)
-    # #     handle_speak("Welcome to puzzle bot! You must solve 4 riddles to win. Use the joystick to navigate to each riddle. Remember to say your answer loudly and directly into the mike. Good luck!")
-
-    # if joystick.get_horizontal() > 510:
-    #     if door1 == 0:
-    #         door_image = Image.open("images/door1.jpeg")
-    #         door_image = door_image.convert('RGB')
-    #         door_image = door_image.resize((width, height), Image.BICUBIC)
-    #         disp.image(door_image, rotation)
-    #         handle_speak("Riddle 1. What has words, but never speaks? You have ten seconds to answer")
-
-    #         d = check_userinput()
-    #         if("book" in d["text"]):
-    #             door1 = 1
-    #             num = 4 - (door1+door2+door3+door4)
-    #             buttonG.LED_on(150)
-    #             handle_speak("Correct, you have " + str(num) + " left.")
-    #             door_image = Image.open("images/opendoor1.jpeg")
-    #             door_image = door_image.convert('RGB')
-    #             door_image = door_image.resize((width, height), Image.BICUBIC)
-    #             disp.image(door_image, rotation)
-    #             buttonG.LED_off()
-    #         else:
-    #             buttonR.LED_on(150)
-    #             handle_speak("Incorrect, push the joystick up to try again")
-    #             buttonR.LED_off()
-    #     else:
-    #         door_image = Image.open("images/opendoor1.jpeg")
-    #         door_image = door_image.convert('RGB')
-    #         door_image = door_image.resize((width, height), Image.BICUBIC)
-    #         disp.image(door_image, rotation)
-    #         handle_speak("Riddle 1 has been solved")
-
-    # if joystick.get_vertical() < 450:
-    #     if door2 == 0:
-    #         door_image = Image.open("images/door2.jpeg")
-    #         door_image = door_image.convert('RGB')
-    #         door_image = door_image.resize((width, height), Image.BICUBIC)
-    #         disp.image(door_image, rotation)
-    #         handle_speak("Riddle 2. What has many keys but can’t open a single lock? You have ten seconds to answer.")
-
-    #         d = check_userinput()
-    #         if("piano" in d["text"]):
-    #             door2 = 1
-    #             num = 4 - (door1+door2+door3+door4)
-    #             buttonG.LED_on(150)
-    #             handle_speak("Correct, you have " + str(num) + " left.")
-    #             door_image = Image.open("images/opendoor2.jpeg")
-    #             door_image = door_image.convert('RGB')
-    #             door_image = door_image.resize((width, height), Image.BICUBIC)
-    #             disp.image(door_image, rotation)
-    #             buttonG.LED_off()
-    #         else:
-    #             buttonR.LED_on(150)
-    #             handle_speak("Incorrect, push the joystick to the left to try again")
-    #             buttonR.LED_off()
-    #     else:
-    #         door_image = Image.open("images/opendoor2.jpeg")
-    #         door_image = door_image.convert('RGB')
-    #         door_image = door_image.resize((width, height), Image.BICUBIC)
-    #         disp.image(door_image, rotation)
-    #         handle_speak("Riddle 2 has been solved")
-
-    # if joystick.get_horizontal() < 100:
-    #     if door3 == 0:
-    #         door_image = Image.open("images/door3.jpeg")
-    #         door_image = door_image.convert('RGB')
-    #         door_image = door_image.resize((width, height), Image.BICUBIC)
-    #         disp.image(door_image, rotation)
-    #         handle_speak("Riddle 3. What has a head and a tail but no body? You have ten seconds to answer")
-
-    #         d = check_userinput()
-    #         if("coin" in d["text"]):
-    #             door3 = 1
-    #             num = 4 - (door1+door2+door3+door4)
-    #             buttonG.LED_on(150)
-    #             handle_speak("Correct, you have " + str(num) + " left.")
-    #             door_image = Image.open("images/opendoor3.jpeg")
-    #             door_image = door_image.convert('RGB')
-    #             door_image = door_image.resize((width, height), Image.BICUBIC)
-    #             disp.image(door_image, rotation)
-    #             buttonG.LED_off()
-    #         else:
-    #             buttonR.LED_on(150)
-    #             handle_speak("Incorrect, push the joystick down to try again")
-    #             buttonR.LED_off()
-    #     else:
-    #         door_image = Image.open("images/opendoor3.jpeg")
-    #         door_image = door_image.convert('RGB')
-    #         door_image = door_image.resize((width, height), Image.BICUBIC)
-    #         disp.image(door_image, rotation)
-    #         handle_speak("Riddle 3 has been solved")
-
-    # if joystick.get_vertical() > 1000:
-    #     if door4 == 0:
-    #         door_image = Image.open("images/door4.jpeg")
-    #         door_image = door_image.convert('RGB')
-    #         door_image = door_image.resize((width, height), Image.BICUBIC)
-    #         disp.image(door_image, rotation)
-    #         handle_speak("Riddle 4. What building has the most stories? You have ten seconds to answer")
-
-    #         d = check_userinput()
-    #         if("library" in d["text"]):
-    #             door4 = 1
-    #             num = 4 - (door1+door2+door3+door4)
-    #             buttonG.LED_on(150)
-    #             handle_speak("Correct, you have " + str(num) + " left.")
-    #             door_image = Image.open("images/opendoor4.jpeg")
-    #             door_image = door_image.convert('RGB')
-    #             door_image = door_image.resize((width, height), Image.BICUBIC)
-    #             disp.image(door_image, rotation)
-    #             buttonG.LED_off()
-    #         else:
-    #             buttonR.LED_on(150)
-    #             handle_speak("Incorrect, push the joystick to the right to try again")
-    #             buttonR.LED_off()
-    #     else:
-    #         door_image = Image.open("images/opendoor4.jpeg")
-    #         door_image = door_image.convert('RGB')
-    #         door_image = door_image.resize((width, height), Image.BICUBIC)
-    #         disp.image(door_image, rotation)
-    #         handle_speak("Riddle 4 has been solved")
-
-    # if door1 and door2 and door3 and door4:
-    #     main_image = Image.open("images/end.jpeg")
-    #     main_image = main_image.convert('RGB')
-    #     main_image = main_image.resize((width, height), Image.BICUBIC)
-    #     disp.image(main_image, rotation)
-    #     handle_speak("You have solved all the riddles. Great job!")
-    #     break
-
-    time.sleep(0.5)
-
-while True:
-    main_image = Image.open("images/end.png")
+    main_image = Image.open("images/a_intro.png")
     main_image = main_image.convert('RGB')
     main_image = main_image.resize((width, height), Image.BICUBIC)
     disp.image(main_image, rotation)
+    #ask name and test microphone
+    speak("Hi, Thank you for picking me up. What is your name?")
+    reply_name = check_userinput()
+    if len(reply_name) > 1:
+        speak(str(reply_name))
+        speak("What is your hobby?")
+    else:
+        speak("Please speak louder to the microphon on the side, what is your name again?")
+        reply_name = check_userinput()
+        speak(str(reply_name))
+        speak("What is your hobby?")
+
+    #ask hobby and initiate the game
+    reply_hobby = check_userinput()
+    if len(reply_hobby) > 1:
+        speak(str(reply_hobby))
+        speak("That's interesting. I like to draw. Do you want to see my drawings and guess what they are?")
+    else: 
+        speak("I didn't hear you well. anyhow, my hobby is drawing. Do you want to see my drawings and guess what they are?")
+
+    reply_start = check_userinput()
+    if("yes" or "sure" or "okay" or "good" or "cool" in reply_start):
+        speak("cool! I have six pics. Guess in three seconds. Say only once, closer to the microphone on the side.")
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        q1 = Image.open("images/a_intro.png")
+        q1 = q1.convert('RGB')
+        q1 = q1.resize((width, height), Image.BICUBIC)
+        disp.image(q1, rotation)
+        time.sleep(2)
+        # Draw a black filled box to clear the image.
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        q1 = Image.open("images/01_turtle.png")
+        q1 = q1.convert('RGB')
+        q1 = q1.resize((width, height), Image.BICUBIC)
+        disp.image(q1, rotation)
+        time.sleep(1)
+        reply = check_userinput()
+        if("turtle" in reply or "tortoise" in reply):
+            score += 1
+            buttonG.LED_on(150)
+            speak("correct")
+            buttonG.LED_off()
+        else: 
+            speak("wrong")
+
+        speak("next")
+        q2 = Image.open("images/02_icecream.png")
+        q2 = q2.convert('RGB')
+        q2 = q2.resize((width, height), Image.BICUBIC)
+        disp.image(q2, rotation)
+        time.sleep(1)
+        reply = check_userinput()
+        if("icecream" or "ice cream" or "i scream" in reply):
+            score += 1
+            buttonG.LED_on(150)
+            speak("correct")
+            buttonG.LED_off()
+        else: 
+            speak("wrong")
+
+
+        speak("next")
+        q3 = Image.open("images/03_skull.png").convert('RGB')
+        q3 = q3.resize((width, height), Image.BICUBIC)
+        disp.image(q3, rotation)
+        time.sleep(1)
+        reply = check_userinput()
+        if("skull" in reply):
+            score += 1
+            buttonG.LED_on(150)
+            speak("correct")
+            buttonG.LED_off()
+        else: 
+            speak("wrong")
+
+
+        speak("next")
+        q4 = Image.open("images/05_yoga.png").convert('RGB')
+        q4 = q4.resize((width, height), Image.BICUBIC)
+        disp.image(q4, rotation)
+        time.sleep(1)
+        reply = check_userinput()
+        if("yoga" in reply):
+            score += 1
+            buttonG.LED_on(150)
+            speak("correct")
+            buttonG.LED_off()
+        else: 
+            speak("wrong")
+
+
+        speak("next")
+        q5 = Image.open("images/06_beard.png").convert('RGB')
+        q5 = q5.resize((width, height), Image.BICUBIC)
+        disp.image(q5, rotation)
+        time.sleep(1)
+        reply = check_userinput()
+        if("beard" in reply):
+            score += 1
+            buttonG.LED_on(150)
+            speak("correct")
+            buttonG.LED_off()
+        else: 
+            speak("wrong")
+
+        speak("next")
+        q6 = Image.open("images/10_asparagus.png").convert('RGB')
+        q6 = q6.resize((width, height), Image.BICUBIC)
+        disp.image(q6, rotation)
+        time.sleep(1)
+        reply = check_userinput()
+        if("asparagus" in reply):
+            score += 1
+            buttonG.LED_on(150)
+            speak("correct")
+            buttonG.LED_off()
+        else: 
+            speak("wrong")
+
+        speak("your score is" + str(score))
+        if score < 3: speak("you don't get my drawings")
+        elif score >=3 and score < 6: speak("You are pretty good")
+        elif score == 6 : speak("oh my god you must be my soulmate")
+
+    else: 
+        speak("I assume you don't want to play with me.")
+        time.sleep(1)
+        break
+
+
+    speak("bye, let's play next time")
+    time.sleep(0.5)
+    break
