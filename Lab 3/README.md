@@ -159,12 +159,6 @@ One thing I predicted right was:
   User asked back 'What is Strooptest?' When Pi(me) said 'Let's play Strooptest, tell me a color of the ink you see' 
 
 
-\*\***Things I can improve in design, learned from the act-out**\*\*
-  1) Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement
-  2) Add a interaction to actively start the game, instead of automatic start 
-  3) Add a sign to let the user know when it's moving on to the next round or how many secs left in this roudn
-  4) Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to something like 'Let's play a game to test your cognitive ability! Tell me the color of the ink you see on the screen. Want to play?' 
-
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
 
@@ -174,11 +168,29 @@ In the [demo directory](./demo), you will find an example Wizard of Oz project. 
 
 For Part 2, you will redesign the interaction with the speech-enabled device using the data collected, as well as feedback from part 1.
 
+
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
+
+\*\***Things I can improve in design, learned from the act-out**\*\*
+  1) Initiation: Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement
+  2) Explicit Interactions: Add a interaction(user input and feedback) to actively start the game, instead of automatic start 
+  3) Feedback: Add a sign to let the user know when it's moving on to the next round 
+  4) Wording: Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to something like 'Let's play a game to test your cognitive ability! Tell me the color of the ink you see on the screen. Want to play?' 
+
+\*\***Learned from the feedback**\*\*
+  1) Stroop doesn't require so much of speech interactions. I could design a more verbally interactive situation. 
+
+
+
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
-3. Make a new storyboard, diagram and/or script based on these reflections.
+  1) Written communication: adding a written description next to Pi device clarifying how to initiate conversation or how it might take few seconds for Pi to understand the player
+  2) Visual sign: using LED light to signal the player when they gave a correct answer during the game
+  3) Visual sign: using an arrow icon to mark the location of the microphone.
+
+
+5. Make a new storyboard, diagram and/or script based on these reflections.
 
 ## Prototype your system
 
