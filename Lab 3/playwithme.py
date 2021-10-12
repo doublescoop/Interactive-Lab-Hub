@@ -175,7 +175,8 @@ while True:
     reply_start = check_userinput()
     if "yes" or "sure" or "okay" or "good" or "cool" in reply_start:
         speak(
-            "cool! I have six pics. Guess in three seconds. Say only once, very close to the microphone on the bottom right."
+            "cool! I have six pics. Guess in three seconds. Say only once, very close to the microphone on the bottom right. \
+            It will warm my heart up if you get my drawings"
         )
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
         q1 = Image.open("images/a_intro.png")
@@ -194,7 +195,7 @@ while True:
         if "snow man" in reply or "snowman" in reply:
             score += 1
             buttonG.LED_on(150)
-            speak("correct")
+            speak("correct, my heart is warmed")
             buttonG.LED_off()
         else:
             speak("wrong, it's snowman.")
@@ -251,7 +252,7 @@ while True:
         if "hot dog" in reply:
             score += 1
             buttonG.LED_on(150)
-            speak("correct")
+            speak("correct, my heart is warmed")
             buttonG.LED_off()
         else:
             speak("wrong, it's hotdog")
