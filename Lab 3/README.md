@@ -175,14 +175,21 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 
 \*\***Things I can improve in design, learned from the act-out**\*\*
   1) Type of Interaction: I designed a game that player's response time is critical. Player with a faster response should be getting a higher score in the 'stroopgame' that I originally wanted to implement with Pi speech interaction. Considering the lagging time of Pi's speech2text function, I should design a different game where there are more verbal interactions with Pi but the response time is less critical in playing.  
-  1) Initiation: Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement.
-  2) Explicit Interactions: Add a interaction(user input and feedback) to actively start the game, instead of automatic start. 
-  3) Feedback: Add a sign to let the user know when it's moving on to the next round.
-  4) Wording: Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to be more self-explanatory.
+
+* video description of how the 'stroopgame' turned out to be inappropriate for this interaction system.
+
+
+https://user-images.githubusercontent.com/42717070/137018051-19cb4ce7-8eb7-49a0-9fe9-d219a2017955.mov
+
+
+
+  2) Initiation: Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement.
+  3) Explicit Interactions: Add a interaction(user input and feedback) to actively start the game, instead of automatic start. 
+  4) Feedback: Add a sign to let the user know when it's moving on to the next round.
+  5) Wording: Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to be more self-explanatory.
 
 \*\***Learned from the feedback**\*\*
- 1. Stroop doesn't require so much of speech interactions. I could design a more verbally interactive situation. 
-
+ 1. Stroopgame doesn't require so much of speech interactions. I could design a more verbally interactive situation. 
 
 
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
@@ -193,6 +200,10 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 
 3. Make a new storyboard, diagram and/or script based on these reflections.
 
+* Revised storyboard. Script is included in the storyboard. 
+ ![IMG_2998](https://user-images.githubusercontent.com/42717070/137017762-6c822ffd-a198-439b-b37c-e99b2a5137b1.jpg)
+
+
 ## Prototype your system
 
 The system should:
@@ -200,9 +211,25 @@ The system should:
 * use one or more sensors
 * require participants to speak to it. 
 
-*Document how the system works*
+*Document how the system works*!
+[IMG_6417](https://user-images.githubusercontent.com/42717070/137017731-78df7937-eafc-4220-9358-61a4d11e1df3.jpg)
+
+- Pi is now disguised as a Boo 👻. Player can initiate the interaction by waving at it. 
+- Pi and the player learns about each other's name and hobby first. Through this process, player learns to speak closer to the microphone to make sure Boo understands him/her.
+- Pi suggests to play a game to guess what its drawings are. It verablyl explains the rules and asks the player to join.
+- Player sees the drawing on the screen and guess out loud. Pi let the player know with sound and light if they're correct and keep a record of their score.
+- After six rounds, Pi announces the score and terminate the interaction. 
 
 *Include videos or screencaptures of both the system and the controller.*
+
+
+
+https://user-images.githubusercontent.com/42717070/137019092-7bd1b887-93d7-497a-8ee3-9cb99a10d08f.mov
+
+
+* My system didn't need a controller. All interactions were initiated and continued automatically with a motion/verbal sign (at the cost of speed). I was able to watch the dictation of the player's reply on my terminal tho, which sometimes went really wrong:
+![IMG_6412](https://user-images.githubusercontent.com/42717070/137019560-e64acb95-9e4b-4485-95e5-12da297a87e8.jpg)
+ (fyi: the player meant 'cooking', when asked about her hobby)
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
