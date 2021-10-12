@@ -174,13 +174,14 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
 
 \*\***Things I can improve in design, learned from the act-out**\*\*
-  1) Initiation: Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement
-  2) Explicit Interactions: Add a interaction(user input and feedback) to actively start the game, instead of automatic start 
-  3) Feedback: Add a sign to let the user know when it's moving on to the next round 
-  4) Wording: Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to something like 'Let's play a game to test your cognitive ability! Tell me the color of the ink you see on the screen. Want to play?' 
+  1) Type of Interaction: I designed a game that player's response time is critical. Player with a faster response should be getting a higher score in the 'stroopgame' that I originally wanted to implement with Pi speech interaction. Considering the lagging time of Pi's speech2text function, I should design a different game where there are more verbal interactions with Pi but the response time is less critical in playing.  
+  1) Initiation: Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement.
+  2) Explicit Interactions: Add a interaction(user input and feedback) to actively start the game, instead of automatic start. 
+  3) Feedback: Add a sign to let the user know when it's moving on to the next round.
+  4) Wording: Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to be more self-explanatory.
 
 \*\***Learned from the feedback**\*\*
-  1) Stroop doesn't require so much of speech interactions. I could design a more verbally interactive situation. 
+ 1. Stroop doesn't require so much of speech interactions. I could design a more verbally interactive situation. 
 
 
 
@@ -190,7 +191,7 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
   3) Visual sign: using an arrow icon to mark the location of the microphone.
 
 
-5. Make a new storyboard, diagram and/or script based on these reflections.
+3. Make a new storyboard, diagram and/or script based on these reflections.
 
 ## Prototype your system
 
@@ -209,18 +210,21 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+\*\**Directing the player to speak closer to the microphone when the first recording from the user was not clear worked well. Players tried to speak louder and closer to the microphone after the instruction. Verbally explaining what game the Pi wants to play to the user went well too. Players understood they have to guess the drawing on the screen and spoke out loud their answers. However, sometimes Pi didn't recognize correct answers. It might be due to low recording quality.*\*\*
 
 ### What worked well about the controller and what didn't?
 
-\*\**your answer here*\*\*
+\*\**In my design, I didn't have to use a controller. Pi and the player initiated and continued verbal interactions. Player's reply or preset timer triggered next scene.*\*\*
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-\*\**your answer here*\*\*
+\*\**Utilizing an appropriate sensors and libraries that resonate with natural way of interaction is critical. For example, I first tried to initiate the interaction by having the player to phisically 'pick up' the Pi, in attempt to get the player closer to the microphone. However, it confused the player and failed to initiate the interaction since the players are not used to the action of picking up the device to start interacting. In autonomous design, it would be more critical to devise a system that follows the player's natural way of thinking. 
+Also, giving an explicit feedback after the player's action(speaking) is crucial. In autonomous design, the user might not know whether something is being processed behind the scene or not. For example, it took Pi about 5 seconds to process and dictate(speech2text) the plyers's reply and judge if it's correct. Players got impaitient during the wait or were wondering if it's working. Therefore, while the autonomous process is happening, there should be a signal to inform the user about it. *\*\*
 
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
+\*\** It could create a dataset that captures how humans follow directions from a robot and how they react to it. Partially due to the limitation of microphone quality and size of the screen, my system required the user to adopt an unnatural way of interaction(having to bend down and speack very close to a device/repeating the same reply etc). I think it would collect interesting reactions from users how well/badly they follow the directions given by the Pi('get really close to me and speak louder) and what's their reactions. It's not a sensing modality but capturing their facial expressions during this interaction would make sense to further analyze how they feel and react. 
+
+Also, my system is trying to stimuly users' emotions towards a robot through the interaction. It could be used to create a dataset of emotional impacts created by the interaction. For example, I used a rather cute disguise for the device and implemented emotional quotes like 'it'd warm my heart up' to create some emotional conncections during the interaction. There are no sensory modalities needed other than the sound but capturing heart rate, facial expressions, or ideally brain waves can help investigating emotional impacts. *\*\*
 

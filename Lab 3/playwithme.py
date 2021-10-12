@@ -125,11 +125,11 @@ score = 0
 while True:
     prox = sensor.proximity
     if prox > 10:
-        main_image = Image.open("images/a_pickmeup.png")
+        main_image = Image.open("images/a_hi.png")
         main_image = main_image.convert("RGB")
         main_image = main_image.resize((width, height), Image.BICUBIC)
         disp.image(main_image, rotation)
-        speak("Hi, pick me up!")
+        speak("Hi there boo!")
         time.sleep(2)
         break
 
@@ -142,19 +142,19 @@ while True:
 #             break
 
 while True:
-    main_image = Image.open("images/a_intro.png")
+    main_image = Image.open("images/a_boo.png")
     main_image = main_image.convert("RGB")
     main_image = main_image.resize((width, height), Image.BICUBIC)
     disp.image(main_image, rotation)
     # ask name and test microphone
-    speak("Hi, Thank you for picking me up. What is your name?")
+    speak("Thank you for waking me up. I'm boo. What is your name?")
     reply_name = check_userinput()
     if len(reply_name) > 1:
         speak(str(reply_name))
         speak("What is your hobby?")
     else:
         speak(
-            "Please speak louder to the microphon on the side, what is your name again?"
+            "Please speak louder to the microphon on the side, like get really really close to me. what is your name again?"
         )
         reply_name = check_userinput()
         speak(str(reply_name))
@@ -175,7 +175,7 @@ while True:
     reply_start = check_userinput()
     if "yes" or "sure" or "okay" or "good" or "cool" in reply_start:
         speak(
-            "cool! I have six pics. Guess in three seconds. Say only once, closer to the microphone on the side."
+            "cool! I have six pics. Guess in three seconds. Say only once, very close to the microphone on the bottom right."
         )
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
         q1 = Image.open("images/a_intro.png")
@@ -185,19 +185,19 @@ while True:
         time.sleep(2)
         # Draw a black filled box to clear the image.
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
-        q1 = Image.open("images/01_turtle.png")
+        q1 = Image.open("images/04_snowman.png")
         q1 = q1.convert("RGB")
         q1 = q1.resize((width, height), Image.BICUBIC)
         disp.image(q1, rotation)
         time.sleep(1)
         reply = check_userinput()
-        if "turtle" in reply or "tortoise" in reply:
+        if "snow man" in reply or "snowman" in reply:
             score += 1
             buttonG.LED_on(150)
             speak("correct")
             buttonG.LED_off()
         else:
-            speak("wrong")
+            speak("wrong, it's snowman.")
 
         speak("next")
         q2 = Image.open("images/02_icecream.png")
@@ -212,21 +212,21 @@ while True:
             speak("correct")
             buttonG.LED_off()
         else:
-            speak("wrong")
+            speak("wrong, it's icecream")
 
         speak("next")
-        q3 = Image.open("images/03_skull.png").convert("RGB")
+        q3 = Image.open("images/08_beach.png").convert("RGB")
         q3 = q3.resize((width, height), Image.BICUBIC)
         disp.image(q3, rotation)
         time.sleep(1)
         reply = check_userinput()
-        if "skull" in reply:
+        if "beach" in reply:
             score += 1
             buttonG.LED_on(150)
             speak("correct")
             buttonG.LED_off()
         else:
-            speak("wrong, it's a skull")
+            speak("wrong, it's a beach.")
 
         speak("next")
         q4 = Image.open("images/05_yoga.png").convert("RGB")
@@ -248,7 +248,7 @@ while True:
         disp.image(q5, rotation)
         time.sleep(1)
         reply = check_userinput()
-        if "hotdog" in reply:
+        if "hot dog" in reply:
             score += 1
             buttonG.LED_on(150)
             speak("correct")
@@ -270,6 +270,7 @@ while True:
         else:
             speak("wrong, it's asparagus")
 
+        #announces total score and give comments accordingly
         speak("your score is" + str(score))
         if score < 3:
             speak("you don't get my drawings")
@@ -284,5 +285,9 @@ while True:
         break
 
     speak("bye, let's play next time")
-    time.sleep(0.5)
+    end = Image.open("images/end.png").convert("RGB")
+    end = end.resize((width, height), Image.BICUBIC)
+    disp.image(end, rotation)
+    time.sleep(1)
+
     break
