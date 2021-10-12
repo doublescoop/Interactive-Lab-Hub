@@ -174,7 +174,7 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
 
 \*\***Things I can improve in design, learned from the act-out**\*\*
-  1) Type of Interaction: I designed a game that player's response time is critical. Player with a faster response should be getting a higher score in the 'stroopgame' that I originally wanted to implement with Pi speech interaction. Considering the lagging time of Pi's speech2text function, I should design a different game where there are more verbal interactions with Pi but the response time is less critical in playing.  
+  * Type of Interaction: I designed a game that player's response time is critical. Player with a faster response should be getting a higher score in the 'stroopgame' that I originally wanted to implement with Pi speech interaction. Considering the lagging time of Pi's speech2text function, I should design a different game where there are more verbal interactions with Pi but the response time is less critical in playing.  
 
 * video description of how the 'stroopgame' turned out to be inappropriate for this interaction system.
 
@@ -183,16 +183,16 @@ https://user-images.githubusercontent.com/42717070/137018051-19cb4ce7-8eb7-49a0-
 
 
 
-  2) Initiation: Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement.
-  3) Explicit Interactions: Add a interaction(user input and feedback) to actively start the game, instead of automatic start. 
-  4) Feedback: Add a sign to let the user know when it's moving on to the next round.
-  5) Wording: Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to be more self-explanatory.
+  * Initiation: Instead of repeating 'Pick me up' to start the first interaction, I could use a different nudge to start the engagement.
+  * Explicit Interactions: Add a interaction(user input and feedback) to actively start the game, instead of automatic start. 
+  * Feedback: Add a sign to let the user know when it's moving on to the next round.
+  * Wording: Not use the unfamiliar terminology 'Stroopgame'. Change the instruction to be more self-explanatory.
 
 \*\***Learned from the feedback**\*\*
- 1. Stroopgame doesn't require so much of speech interactions. I could design a more verbally interactive situation. 
+ * Stroopgame doesn't require so much of speech interactions. I could design a more verbally interactive situation. 
 
 
-2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+* What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
   1) Written communication: adding a written description next to Pi device clarifying how to initiate conversation or how it might take few seconds for Pi to understand the player
   2) Visual sign: using LED light to signal the player when they gave a correct answer during the game
   3) Visual sign: using an arrow icon to mark the location of the microphone.
@@ -211,8 +211,8 @@ The system should:
 * use one or more sensors
 * require participants to speak to it. 
 
-*Document how the system works*!
-[IMG_6417](https://user-images.githubusercontent.com/42717070/137017731-78df7937-eafc-4220-9358-61a4d11e1df3.jpg)
+*Document how the system works*
+![IMG_6417](https://user-images.githubusercontent.com/42717070/137017731-78df7937-eafc-4220-9358-61a4d11e1df3.jpg)
 
 - Pi is now disguised as a Boo 👻. Player can initiate the interaction by waving at it. 
 - Pi and the player learns about each other's name and hobby first. Through this process, player learns to speak closer to the microphone to make sure Boo understands him/her.
