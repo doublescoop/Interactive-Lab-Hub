@@ -217,7 +217,7 @@ The system should:
 - Pi is now disguised as a Boo 👻. Player can initiate the interaction by waving at it. 
 - Pi and the player learns about each other's name and hobby first. Through this process, player learns to speak closer to the microphone to make sure Boo understands him/her.
 - Pi suggests to play a game to guess what its drawings are. It verablyl explains the rules and asks the player to join.
-- Player sees the drawing on the screen and guess out loud. Pi let the player know with sound and light if they're correct and keep a record of their score.
+- Player sees the drawing on the screen and guess out loud. Pi let the player know if they're correct and keep a record of their score. When the player understand it's drawing, Pi's heart warms up with green light.
 - After six rounds, Pi announces the score and terminate the interaction. 
 
 *Include videos or screencaptures of both the system and the controller.*
