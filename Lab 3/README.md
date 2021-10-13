@@ -216,9 +216,9 @@ The system should:
 
 - Pi is now disguised as a Boo 👻. Player can initiate the interaction by waving at it. 
 - Pi and the player learns about each other's name and hobby first. Through this process, player learns to speak closer to the microphone to make sure Boo understands him/her.
-- Pi suggests to play a game to guess what its drawings are. It verablyl explains the rules and asks the player to join.
-- Player sees the drawing on the screen and guess out loud. Pi let the player know if they're correct and keep a record of their score. When the player understand it's drawing, Pi's heart warms up with green light.
-- After six rounds, Pi announces the score and terminate the interaction. 
+- Pi suggests to play a game to guess what its drawings are. It verbally explains the rules and asks the player to join.
+- Player sees the drawing on the screen and guesses out loud. Pi speaks back whether it's right or wrong and keeps a record of their score. When the player understands it's drawing, Pi's heart warms up with green light.
+- After six rounds, Pi announces the score and terminates the interaction. 
 
 *Include videos or screencaptures of both the system and the controller.*
 
@@ -229,7 +229,7 @@ https://user-images.githubusercontent.com/42717070/137019092-7bd1b887-93d7-497a-
 
 * My system didn't need a controller. All interactions were initiated and continued automatically with a motion/verbal sign (at the cost of speed). I was able to watch the dictation of the player's reply on my terminal tho, which sometimes went really wrong:
 ![IMG_6412](https://user-images.githubusercontent.com/42717070/137019560-e64acb95-9e4b-4485-95e5-12da297a87e8.jpg)
- (fyi: the player meant 'cooking', when asked about her hobby)
+ (fyi: the player meant 'cooking', not 'cocaine', when asked about her hobby)
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
@@ -237,7 +237,7 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**Directing the player to speak closer to the microphone when the first recording from the user was not clear worked well. Players tried to speak louder and closer to the microphone after the instruction. Verbally explaining what game the Pi wants to play to the user went well too. Players understood they have to guess the drawing on the screen and spoke out loud their answers. However, sometimes Pi didn't recognize correct answers. It might be due to low recording quality.*\*\*
+\*\**Directing the player to speak closer to the microphone when the first recording from the user was not clear worked well. Players tried to speak louder and positioned closer to the microphone after the verbal instruction given by the Pi. Verbally explaining what game the Pi wants to play to the user went well too. Players understood they have to guess the drawing on the screen and spoke out loud their answers. However, sometimes Pi didn't recognize correct answers. For some reason it always categorized 'turtle' as a wrong answer when it was correct. It recognized 'hotdog' but not 'hot dog' with a space in the middle. It might be due to low recording quality, limitations in dictation capabilities, and each player's accent.*\*\*
 
 ### What worked well about the controller and what didn't?
 
@@ -253,5 +253,5 @@ Also, giving an explicit feedback after the player's action(speaking) is crucial
 
 \*\** It could create a dataset that captures how humans follow directions from a robot and how they react to it. Partially due to the limitation of microphone quality and size of the screen, my system required the user to adopt an unnatural way of interaction(having to bend down and speack very close to a device/repeating the same reply etc). I think it would collect interesting reactions from users how well/badly they follow the directions given by the Pi('get really close to me and speak louder) and what's their reactions. It's not a sensing modality but capturing their facial expressions during this interaction would make sense to further analyze how they feel and react. 
 
-Also, my system is trying to stimuly users' emotions towards a robot through the interaction. It could be used to create a dataset of emotional impacts created by the interaction. For example, I used a rather cute disguise for the device and implemented emotional quotes like 'it'd warm my heart up' to create some emotional conncections during the interaction. There are no sensory modalities needed other than the sound but capturing heart rate, facial expressions, or ideally brain waves can help investigating emotional impacts. *\*\*
+Also, my system is trying to stimuly users' emotions towards a robot through the interaction. It could be used to create a dataset of emotional impacts created by the interaction. For example, I used a rather cute disguise for the device and implemented emotional quotes like 'it'd warm my heart up' to create some emotional conncections during the interaction. There are no sensory modalities needed other than the sound but capturing heart rate via wearable devices, facial expressions, or ideally brain waves can help investigating emotional impacts. *\*\*
 
