@@ -175,13 +175,6 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
-![idea1](https://user-images.githubusercontent.com/42717070/137837321-e0760b4f-cb73-43b0-a41c-f198da9eb79b.jpg)
-![idea2](https://user-images.githubusercontent.com/42717070/137837327-3f04b0db-9572-42ee-8936-67680fd3be75.jpg)
-![idea3](https://user-images.githubusercontent.com/42717070/137837329-044ea365-3e9c-413d-bf4e-320f6b5b655b.jpg)
-![idea4](https://user-images.githubusercontent.com/42717070/137837333-ca4c77b4-f506-4da7-b737-a77e9a918690.jpg)
-![idea5](https://user-images.githubusercontent.com/42717070/137837338-f99993bc-1f30-4f7d-bb49-bce6c21747f5.jpg)
-
-
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
 Idea 1: Distance sensors in the floor at a store to alert people if they are standing closer then 6 feet to one another. 
