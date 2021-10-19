@@ -262,16 +262,39 @@ Here is an example:
 Think about how you want to present the information about what your sensor is sensing! Design a paper display for your project that communicates the state of the Pi and a sensor. Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
  
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
-
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+
+![deisgn1](https://user-images.githubusercontent.com/42717070/137841043-c7e6e443-4b2a-4112-8778-99bbfe65eec6.jpg)
+This sketch raises the question of what material should we use for the buttons attached to the touch sensors. We know that we need to use something conductive so we thought to use some sort of aluminium. 
+
+![design2](https://user-images.githubusercontent.com/42717070/137841047-7c226843-5e44-497c-915b-b934a7d8f955.jpg)
+This sketch also raised questions about what materials we should use for the buttons or knobs in the design. We choose to go with the classic choice twizzlers. These would be stuck through holes in a cardboard game board and connected with alligator clips underneath the board. We also wanted to incorporate a cool design/mascot into the decive, we chose to use an owl. This raised questions of how we could make this structurally work. To answer this question our idea was to put the pi behind the owl display. 
+![design3](https://user-images.githubusercontent.com/42717070/137841052-2a1fe736-fbcf-4bd7-89bb-f75633074073.jpg)
+In this sketch we wanted to explore using a mode of communication with the users different than voice. To do this we choose to display the french would instead of speaking it to the user. We were questions with how could we do this in a creative way, we choose to make the display look like a dictionary.
+![design4](https://user-images.githubusercontent.com/42717070/137841057-0219b587-2329-434b-9906-99221104aeb8.jpg)
+We were exploring the right look and feel for a gamified interactive learning device, and we chose the look of an owl teacher!(a.k.a. Pierre the Owl) It raised question around the layouts of the owl, speaker, display, and the touch panels. We will need a physical prototype to configure the size and layouts. 
+![design5](https://user-images.githubusercontent.com/42717070/137841062-c714e68d-0aa3-467f-9992-600a7daaad0b.jpg)
+In this sketch we expanded the idea to use combbined playboards(instead of 10 panels) for each player. It raised questions about how to connect each words on the same board separately to each touch sensor outlet for each player. Physical prototyping for the board & cord placement, and exploring the conductive matertials would be important. 
+
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
+We decided to prototype the design 4. 
+
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+We are designing a gamified interactive language learning device. The device will speak in French and two players can compete to choose the corresponding English word faster, by touching panels with letters on them. We are using Pierre the Owl as our mascot to highlight the gamification feeling and foster the user engagement. He will be standing on the device, facing the users. A speaker to play French words/sentences and a display to show the score are needed to be placed near him. Since this device need the Pi, a display panel, the speaker, the touch sensor with 10 alligator clips, we decided to build a box casing around them to make the look neater. Players are expected to touch one of the five panels as fast as possible once the French word is played. So each panel has to be big enough for the user to comfortable touch them in fast motion, and the words on them should be big enough to be readable from an arm-length away. To incorporate two levels of the game, we designed the word panels to be reversible(the flipped side can be used for a different level). Panels should be made in materials easily flippable and have obvious two sides(it cannot be cylinder like a Twizzler). 
+
 
 Build a cardbord prototype of your design.
 
+
 **\*\*\*Document your rough prototype.\*\*\***
+
+![proto1](https://user-images.githubusercontent.com/42717070/137850267-cdd95489-349c-4e34-8cb9-5471eecb6a6d.jpg)
+![proto2](https://user-images.githubusercontent.com/42717070/137850270-f64e4370-3612-4f62-bf45-97b74e053556.jpg)
+![proto_closeup](https://user-images.githubusercontent.com/42717070/137850264-b47fef91-2fb5-4798-bdcd-d2f97b2fe7b6.jpg)
+![proto_inside](https://user-images.githubusercontent.com/42717070/137850265-a577ed70-ecfc-423d-b529-07d7bd583cc5.jpg)
 
 
 LAB PART 2
