@@ -175,7 +175,50 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
+![idea1](https://user-images.githubusercontent.com/42717070/137837321-e0760b4f-cb73-43b0-a41c-f198da9eb79b.jpg)
+![idea2](https://user-images.githubusercontent.com/42717070/137837327-3f04b0db-9572-42ee-8936-67680fd3be75.jpg)
+![idea3](https://user-images.githubusercontent.com/42717070/137837329-044ea365-3e9c-413d-bf4e-320f6b5b655b.jpg)
+![idea4](https://user-images.githubusercontent.com/42717070/137837333-ca4c77b4-f506-4da7-b737-a77e9a918690.jpg)
+![idea5](https://user-images.githubusercontent.com/42717070/137837338-f99993bc-1f30-4f7d-bb49-bce6c21747f5.jpg)
+
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+
+Idea 1: Distance sensors in the floor at a store to alert people if they are standing closer then 6 feet to one another. 
+The larger device is the system of both the sensor in the floor and a speaker on the ceiling. The floor sensors will be 6 feet a part and notify the speaker to beep if they sense someone has broken the 6 feet rule. 
+![idea1](https://user-images.githubusercontent.com/73661058/137837271-6d212f9f-f9a4-41c8-8bf4-cd2580f4a9bf.jpg)
+
+- Where should the distance sensor be positioned physically in various store setting so it can effectively measure the distance between the people in line? 
+ > a prototype of an attachable sensor design that can easily be re-positioned. The size, weight, and angle to measure the distance would be critical in this prototype.
+
+Idea 2: Touch sensors under a chair to detect when a person sits down at their desk thier lamp turns on.
+The larger device is the system of both the sensor on the chair and the lamp. The touch sensor will detect the touch of someone sitting down and it will communicate withe the light when it detects touch. 
+![idea2](https://user-images.githubusercontent.com/73661058/137837501-1f5aa437-8846-40de-91ca-c4e4a80a5240.jpg)
+
+- Would the user seating on a chair feel like the sensor on the bottom uncomfortable? How can we make the device not physically disturbing to the user but still positioned in the most effective spot(e.g. right under the seating area of chair)? 
+ > a prototype with different coverings of the sensor which can test how the user feel when they're sitting on it. building with an actual chair and positioning them in different spots can be helpful too. 
+
+Idea 3: This is idea is an interactive story book. As a child reads through a book they can touch the images and they will come to live in animation in a near by monitor. The story book would be made out of conductive material attached to touch sensor to detect when a particular image is touched. When the sensor detcts touch it would communicate with the monitor and on what animation to display. 
+![idea3](https://user-images.githubusercontent.com/73661058/137838174-56edf778-a1ea-4873-a200-13f3c7eab51a.jpg)
+
+- How can the touch sensors be attatched to a book but not disturb the reader? How can we section out certain part of the page to be connected with a specific sensor?
+ > a prototype of an interactive book that each page is thick enough to hold the sensors. Explore with different conductive materials that can be easily attatched to the pages for the sensors. 
+
+Idea 4: This idea is a language learning game. The decive says a word in french and the players task is to touch the corresponding connected word in english. The Pi and speaker will be in a box with touch sensors connected attached to connective buttons the user can touch. 
+![idea4](https://user-images.githubusercontent.com/73661058/137839198-1eb78e94-e861-4689-9f5e-af8a4a574e06.jpg)
+
+- What kind of casing is needed to cover the device and make all the wires look neater? What kind of conductive material should be used? What size of the panel is appropriate?
+ > a prototype to explore different size and material of the casing and the panel. 
+
+Idea 5: This is a yoga alram clock. Users must walk up to the alram clock and do a yoga pose for it to shut it up. The larger device must use motion sensors and pose recognition in its design to sense when to quiet itself. The larger device will also have a speaker to scream at the user to wake up. 
+![idea5](https://user-images.githubusercontent.com/73661058/137839680-06d7a7e7-922b-4694-bc22-ebe81474f4a4.jpg)
+
+- What is the best way to implement the motion detection/pose recognition? What is a good pose that's moderately hard for the users (so they can be awoke) and easy for the sensor to recognize? What is the appropriate distance? Where should the camera be placed in the clock?
+> a prototype to test the recognition functions and to determine the place for the camera.
+
+
+- What is the best way to implement the motion detection/pose recognition? What is a good pose that's moderately hard for the users (so they can be awoke) and easy for the sensor to recognize? What is the appropriate distance? Where should the camera be placed in the clock?
+> a prototype to test the recognition functions and to determine the place for the camera. 
 
 **\*\*\*Pick one of these designs to prototype.\*\*\***
 
