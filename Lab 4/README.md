@@ -331,7 +331,8 @@ We encourage you to try using these controls, **while** paying particular attent
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 
-##### insert a pic of the entire setup
+
+![IMG_6670](https://user-images.githubusercontent.com/42717070/138573801-d275849a-52d9-4ef6-8dcc-e1041104018f.jpg)
 
 The device looks like a physical board game device with a eye-catching owl figure standing on it. With a cute figure and poppy colors, it gives a fun feeling while being educational. It has a box to contain the Pi and hide the sensor and wires that players don't need to see while still allows us to easily detach the Pi when needed by simply opening up the top. The box has ten alligator wires, five on each side, connecting to ten vocabulary cards. Cards on each side is colored diffrently so it's clear for the players to know which card belongs to whom, and the Pierre the Owl calculates the score and announces the winner by addressing the color as well. After acting it out ourselves, we found that asigning colors is more intuitive than using numeric identifier like player 1, 2.
 
@@ -346,6 +347,7 @@ And printed out the texts to find the right size, iterated three times(ouch!) be
 ![IMG_6666](https://user-images.githubusercontent.com/42717070/138571934-dc634d7b-23b0-47ff-9132-edeffc78c969.jpg)
 ![IMG_6667](https://user-images.githubusercontent.com/42717070/138571935-990586cd-8698-4c1c-b998-265594220edf.jpg)
 
+![IMG_6668](https://user-images.githubusercontent.com/42717070/138573822-952f56ec-642a-4648-874f-83b50e6e7131.jpg)
 
 
 * "Works like": shows what the device can do
@@ -363,9 +365,19 @@ When the user presses any button to start(as instructed by the text on the box),
 We prepared five basic vocabulraries to learn, regarding food(I mean, what else): Wine, Chocolate, Cheese, Bread, Water
 Pierre speaks in French, players either touch the corresponding card or press the button to listen to replay the word, Pierre keeps the score and display it on the screen, repeat for five rounds. 
 At last, the final winner is announced verbally. 
+![IMG_6671](https://user-images.githubusercontent.com/42717070/138573805-b4524184-64c2-4ad1-bf3f-e956e061f43a.jpg)
+
 
 
 * "Acts like": shows how a person would interact with the device
 
+
+
+https://user-images.githubusercontent.com/42717070/138573814-7f809f69-7de2-459a-a101-0d10cfbe764b.mov
+
+
+
 Players will find this device placed on a desk. Walk up to it, read the texts on the box, find out it's a device to learn French and presse the button to start if interested. After listening to Pierre's verbal instructions, players will touch the card that they think is the answer. If the players wish to listen to the French word again, he/she can press any of the buttons.
+
+
 
