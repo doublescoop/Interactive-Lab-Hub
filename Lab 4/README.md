@@ -330,6 +330,11 @@ We encourage you to try using these controls, **while** paying particular attent
 
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
+The device looks like a physical board game device with a eye-catching owl figure standing on it. It has a box to contain the Pi and hide the sensor and wires that players don't need to see. 
+
+The box has three texts on it to guide the players: i)Title of the game ii) Score sign iii) how to start the game. Font size(big->small) and the layout(top->bottom) follows the importance of the information.
+
+
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
 

@@ -94,15 +94,15 @@ vocabs = ['le vin','Chocolat','du formage','le pain','l\'eau']
 question_num = [1,2,3,4,5]
 
 # score for each player
-score1 = 0
-score2 = 0
+score_blue = 0
+score_orange = 0
 
 def play(q_num):
-    global score1 
-    global score2 
+    global score_blue
+    global score_orange 
 
-    player1 = q_num +1 
-    player2 = q_num +6
+    player_blue = q_num +1 
+    player_orange = q_num +6
 
     #play the question
     speak_fr(str(vocabs[q_num]))
@@ -115,24 +115,24 @@ def play(q_num):
 
         #play it one more time when the player presses one of the buttons
         if not buttonA.value or not buttonB.value:
-        speak_fr(str(vocabs[q_num]))
+            speak_fr(str(vocabs[q_num]))
     
-        if mpr121[player1].value:
-            score1 = score1 + 1
-            speak_eng("player one, correct")
-            print('player1: ', score1)
-            currentscore = str(score1) + " : " + str(score2)
+        if mpr121[player_blue].value:
+            score_blue = score_blue + 1
+            speak_eng("player Blue, correct")
+            print('player blue: ', score_blue)
+            currentscore = str(score_blue) + " : " + str(score_orange)
             #print on the display
             draw.rectangle((0, 0, width, height), outline=0, fill=0)
             draw.text((50, 50), currentscore, font=font2, fill="#FFFFFF")
             disp.image(image, rotation)
             break 
 
-        if mpr121[player2].value:
-            score2 = score2 +1 
-            speak_eng("player two, correct")
-            print('plyer2: ', score2)
-            currentscore = str(score1) + " : " + str(score2)
+        if mpr121[player_orange].value:
+            score_orange = score_orange +1 
+            speak_eng("player Orange, correct")
+            print('plyer orange: ', score_orange)
+            currentscore = str(score_blue) + " : " + str(score_orange)
             #print on the display
             draw.rectangle((0, 0, width, height), outline=0, fill=0)
             draw.text((50, 50), currentscore, font=font2, fill="#FFFFFF")
@@ -144,20 +144,21 @@ def play(q_num):
 while True:
 
     if not buttonA.value or not buttonB.value:
-        speak_fr("Bonjour!")
+        # speak_fr("Bonjour!")
         # speak_eng("I am Pierre the owl and I am going to teach you french.")
         # speak_eng("In this game, I will say a word in french and your task is to touch the corresponding word in english.")
-        # speak_eng(" The player who touches the english card first will get the point")
+        # speak_eng("The player who touches the english card first will get the point")
+        # speak_eng("If you want to hear the french word again, press any button")
         speak_eng("Let's get started!")
 
         for i in range(2):
             play(i)
 
-        print(score1, " : ", score2)
-        if score1 > score2:
-            speak_eng("The winner is player 1")
+        print(score_blue, " : ", score_orange)
+        if score_blue > score_orange:
+            speak_eng("The winner is Player Blue")
         else:
-            speak_eng("The winner is player 2")
+            speak_eng("The winner is Player Orange")
 
         break
 
