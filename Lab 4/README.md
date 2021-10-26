@@ -380,4 +380,7 @@ https://user-images.githubusercontent.com/42717070/138573814-7f809f69-7de2-459a-
 Players will find this device placed on a desk. Walk up to it, read the texts on the box, find out it's a device to learn French and presse the button to start if interested. After listening to Pierre's verbal instructions, players will touch the card that they think is the answer. If the players wish to listen to the French word again, he/she can press any of the buttons.
 
 
+##### collaborative work with Bella Baidak, bb568@cornell.edu. We worked on every part together
+
+
 
