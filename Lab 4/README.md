@@ -330,11 +330,57 @@ We encourage you to try using these controls, **while** paying particular attent
 
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
-The device looks like a physical board game device with a eye-catching owl figure standing on it. It has a box to contain the Pi and hide the sensor and wires that players don't need to see. 
 
-The box has three texts on it to guide the players: i)Title of the game ii) Score sign iii) how to start the game. Font size(big->small) and the layout(top->bottom) follows the importance of the information.
+
+![IMG_6670](https://user-images.githubusercontent.com/42717070/138573801-d275849a-52d9-4ef6-8dcc-e1041104018f.jpg)
+
+The device looks like a physical board game device with a eye-catching owl figure standing on it. With a cute figure and poppy colors, it gives a fun feeling while being educational. It has a box to contain the Pi and hide the sensor and wires that players don't need to see while still allows us to easily detach the Pi when needed by simply opening up the top. The box has ten alligator wires, five on each side, connecting to ten vocabulary cards. Cards on each side is colored diffrently so it's clear for the players to know which card belongs to whom, and the Pierre the Owl calculates the score and announces the winner by addressing the color as well. After acting it out ourselves, we found that asigning colors is more intuitive than using numeric identifier like player 1, 2.
+
+It can be placed in any flat surfaces, ideally big enough to put all ten vocabulary cards and accomodate two players around it. We used an average-sized working desk to demonstrate. We designed both the box and cards light enough to be easily re-located for different occations. You can learn french on your dinner table, desk, on the carpet, or even at a park!
+
+The box has three texts on it to guide the players: i)Title of the game ii) Score sign iii) how to start the game. Font size(big->small) and the layout(top->bottom) follows the importance of the information. We explored the layout of these informations before building the final design:
+![IMG_6664](https://user-images.githubusercontent.com/42717070/138571542-ccf5c384-7b80-42d7-a438-1e13c21ea1f7.jpg)
+![IMG_6665](https://user-images.githubusercontent.com/42717070/138571543-14d3cb24-40cc-4bcd-b200-bb5dbe14ff5a.jpg)
+
+And printed out the texts to find the right size, iterated three times(ouch!) before we printed them on the colored paper:
+
+![IMG_6666](https://user-images.githubusercontent.com/42717070/138571934-dc634d7b-23b0-47ff-9132-edeffc78c969.jpg)
+![IMG_6667](https://user-images.githubusercontent.com/42717070/138571935-990586cd-8698-4c1c-b998-265594220edf.jpg)
+
+![IMG_6668](https://user-images.githubusercontent.com/42717070/138573822-952f56ec-642a-4648-874f-83b50e6e7131.jpg)
 
 
 * "Works like": shows what the device can do
+
+Pierre the Owl is an interactive game device to learn basic French. It's a competition game between two players. Pierre speaks out loud a French vocabulary to teac and players will compete to find the corresponding English word faster. 
+
+When the user presses any button to start(as instructed by the text on the box), Pierre the Owl, our beloved French teacher begin speaking. It introduces herself and explain the game rule:
+> "Bonjour!
+> "I am Pierre the owl and I am going to teach you french."
+> "In this game, I will say a word in french and your task is to touch the corresponding word in english."
+> "The player who touches the english card first will get the point"
+> "If you want to hear the french word again, press any button"
+> "Let's get started!"
+
+We prepared five basic vocabulraries to learn, regarding food(I mean, what else): Wine, Chocolate, Cheese, Bread, Water
+Pierre speaks in French, players either touch the corresponding card or press the button to listen to replay the word, Pierre keeps the score and display it on the screen, repeat for five rounds. 
+At last, the final winner is announced verbally. 
+![IMG_6671](https://user-images.githubusercontent.com/42717070/138573805-b4524184-64c2-4ad1-bf3f-e956e061f43a.jpg)
+
+
+
 * "Acts like": shows how a person would interact with the device
+
+
+
+https://user-images.githubusercontent.com/42717070/138573814-7f809f69-7de2-459a-a101-0d10cfbe764b.mov
+
+
+
+Players will find this device placed on a desk. Walk up to it, read the texts on the box, find out it's a device to learn French and presse the button to start if interested. After listening to Pierre's verbal instructions, players will touch the card that they think is the answer. If the players wish to listen to the French word again, he/she can press any of the buttons.
+
+
+##### collaborative work with Bella Baidak, bb568@cornell.edu. We worked on every part together
+
+
 
