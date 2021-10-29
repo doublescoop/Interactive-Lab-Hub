@@ -4,7 +4,6 @@ import digitalio
 import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
-import board
 import busio
 from adafruit_apds9960.apds9960 import APDS9960
 import time
