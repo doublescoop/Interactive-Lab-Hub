@@ -199,6 +199,35 @@ Try out different interaction outputs and inputs.
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
 
+For this lab we will be creating an interactive Morpheus (from the Matrix) device that dispenses red or blue pills (Candy) based on the users choice. We will specifically be re-creating the scene below and using exact audio from the scene in our device. 
+
+https://user-images.githubusercontent.com/73661058/139364599-9e9ed69a-d9c1-4b22-b7e4-0f0195026e1e.mov
+
+Our device will be made up of a 3D printed Morpheus and cardboard box behind him to store the Pi, camera, motors, and pill dispensors. 
+The way the interaction will work is when the device is turned on Morpheus will start speaking "This is your last chance, after this there is no turning back. You take the blue pill the story ends and you wake up in your bed and belive whatever you want to belive. You take the red pill you stay in wonderland and I show you how deep the rabit hole goes". This will promt the user to choose either a red or blue pill from Morpheus's hands. As the user picks up the pill from Morpheus's hands a camera in the back the box behind Morpheus will detect whether the pill selected is blue or red using a model we trained using trainable machines. Based on the users selection a candy pill will be despensed through a slide at the bottom of the device. 
+
+Device design: 
+
+Front- 
+
+<img width="548" alt="Screen Shot 2021-10-28 at 11 11 44 PM" src="https://user-images.githubusercontent.com/73661058/139367522-cb5e20a9-a646-44f4-a2f1-1fe3dc160553.png">
+
+Back/inside-
+
+<img width="503" alt="Screen Shot 2021-10-28 at 10 54 17 PM" src="https://user-images.githubusercontent.com/73661058/139366050-552c59a1-0333-4ab1-a440-c647f09ece42.png">
+
+Other experimentation and ideation: 
+
+<img width="463" alt="Screen Shot 2021-10-28 at 11 15 58 PM" src="https://user-images.githubusercontent.com/73661058/139369663-5a6a0543-1146-4472-a3a8-3a94be87e219.png">
+
+<img width="358" alt="Screen Shot 2021-10-28 at 11 15 51 PM" src="https://user-images.githubusercontent.com/73661058/139369888-7d28ded7-385b-4cfe-833e-529e33938e1e.png">
+
+<img width="580" alt="Screen Shot 2021-10-28 at 11 15 38 PM" src="https://user-images.githubusercontent.com/73661058/139369962-c65a8d46-16ed-4412-85cc-0f68cc254c6b.png">
+
+<img width="637" alt="Screen Shot 2021-10-28 at 11 14 42 PM" src="https://user-images.githubusercontent.com/73661058/139370000-4af3b001-422a-4539-ad11-1621b2718cc8.png">
+
+<img width="871" alt="Screen Shot 2021-10-28 at 11 15 22 PM" src="https://user-images.githubusercontent.com/73661058/139369981-0ad65d32-f152-47de-966a-f07a1d36f2d2.png">
+
 ### Part C
 ### Test the interaction prototype
 
@@ -221,12 +250,18 @@ For example:
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
 * What can you use X for?
+Are device can be used for a fun and interactive way to eat red and blue candy. 
 * What is a good environment for X?
+A good environment would be in a Matrix enthusiasts home, perhaps on their desk or coffee table. Ideally when the interaction takes place the backround will be clear so Morpheus camera can clearly see the red or blue pill.  
 * What is a bad environment for X?
+A Bad environment would be somewhere crowded where the device can not clearly pick up on the detection of the red or blue pill which is essental for the interaction to work correctly. Another bad environmemt would be in ther presents on a non Matrix enthusiasts or Matrix hater. 
 * When will X break?
+The device will break any of its parts stoped working, the camera, the Pi, or the motors. The device would also break if it was phsyically destroyed, Morpheus was smashed or disasembled from his box set up. Anther way the device could break is if the red and blue pills where taken from Morpheus hands, the user would not know what to do or how to interact with the device. Lastly the device would break if the candy it dispenses runs out. 
 * When it breaks how will X break?
 * What are other properties/behaviors of X?
+The device reenacts a classic sense from the Matrix through audio and user interaction. The device has computer vision and detect red and blue pills. The device can make dispensing decsions based on the sight of red or blue pills. The device dispenses red and blue candy. The devive allows for appreciation of the Matrix. 
 * How does X feel?
+The devices like a plastic 3D model and cardboard. It also feels like delious candy in the users mouth. 
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
