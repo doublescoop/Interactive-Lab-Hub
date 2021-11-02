@@ -194,6 +194,10 @@ This might take a while to get fully installed. After installation, connect your
 
 **\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
 
+<img width="929" alt="Screen Shot 2021-11-02 at 1 23 36 AM" src="https://user-images.githubusercontent.com/42717070/139794388-c37554e2-cd57-44a9-8feb-3058617f7ac9.png">
+<img width="1085" alt="Screen Shot 2021-11-02 at 1 33 08 AM" src="https://user-images.githubusercontent.com/42717070/139794390-2eba20e7-2dc5-4042-af84-efcea5c1a8bf.png">
+I was not sure if the detection from teachable model was performing well from the given code, as it was detecting my cup, phone, and hand all as 'mask'. However, it did perform very well when I trained my own images. I trained four classes: me holding a blue piece of paper, red piece of paer, empty background, and me holding nothing(face). 
+
 
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
 
