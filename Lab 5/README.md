@@ -227,6 +227,10 @@ Try out different interaction outputs and inputs.
 
 For this lab we will be creating an interactive Morpheus (from the Matrix) device that dispenses red or blue pills (Candy) based on the users choice. We will specifically be re-creating the scene below and using exact audio from the scene in our device. 
 
+**Major interaction involving the camera and the models we tried is to detect whether the user is holding a blue pill or a red pill, using the teachable machine. **
+
+
+
 https://user-images.githubusercontent.com/73661058/139364599-9e9ed69a-d9c1-4b22-b7e4-0f0195026e1e.mov
 
 Our device will be made up of a 3D printed Morpheus and cardboard box behind him to store the Pi, camera, motors, and pill dispensors. 
@@ -260,9 +264,19 @@ Other experimentation and ideation:
 Now flight test your interactive prototype and **note down your observations**:
 For example:
 1. When does it what it is supposed to do?
-1. When does it fail?
-1. When it fails, why does it fail?
-1. Based on the behavior you have seen, what other scenarios could cause problems?
+    When the user picks up one of the pills, it should be able to detect i) the fact that user has picked up something ii) and the color of the pill
+2. When does it fail?
+    It fails when the user is holding the pill too far from the camera or holding both of them or not showing it to the camera at at all or pill is not visible to from the camera's angle. Also the position of fingers while holding the pill matters as well. 
+3. When it fails, why does it fail?
+    Because the model is trained in the case where the user is properly holding the pill, visible to the camera, with the right distance. (it cannot be too far)
+   
+4. Based on the behavior you have seen, what other scenarios could cause problems?
+    The user might not know where the camera is. (I had a laptop and the pi camera on, and it was bit confusing where to look at since the display was on the laptop)
+    
+
+<img width="541" alt="Screen Shot 2021-11-02 at 2 16 23 AM" src="https://user-images.githubusercontent.com/42717070/139796302-51d0620d-b8d1-4368-8681-02c42bc25a16.png">
+<img width="553" alt="Screen Shot 2021-11-02 at 2 17 01 AM" src="https://user-images.githubusercontent.com/42717070/139796305-b44f4f08-b045-49b3-87a4-e2ea8f40d592.png">
+
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
