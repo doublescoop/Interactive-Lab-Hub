@@ -225,16 +225,21 @@ Try out different interaction outputs and inputs.
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
 
-For this lab we will be creating an interactive Morpheus (from the Matrix) device that dispenses red or blue pills (Candy) based on the users choice. We will specifically be re-creating the scene below and using exact audio from the scene in our device. 
+### interactive Morpheus (from the Matrix) device that dispenses red or blue pills (Candy) based on the users choice.
+#### We will specifically be re-creating the scene below and using exact audio from the scene in our device. 
 
-**Major interaction involving the camera and the models we tried is to detect whether the user is holding a blue pill or a red pill, using the teachable machine. **
+**Major interaction involving the camera and the image recognition models we tried is to detect whether the user is holding a blue pill or a red pill, using the teachable machine. **
 
 
 
 https://user-images.githubusercontent.com/73661058/139364599-9e9ed69a-d9c1-4b22-b7e4-0f0195026e1e.mov
 
-Our device will be made up of a 3D printed Morpheus and cardboard box behind him to store the Pi, camera, motors, and pill dispensors. 
-The way the interaction will work is when the device is turned on Morpheus will start speaking "This is your last chance, after this there is no turning back. You take the blue pill the story ends and you wake up in your bed and belive whatever you want to belive. You take the red pill you stay in wonderland and I show you how deep the rabit hole goes". This will promt the user to choose either a red or blue pill from Morpheus's hands. As the user picks up the pill from Morpheus's hands a camera in the back the box behind Morpheus will detect whether the pill selected is blue or red using a model we trained using trainable machines. Based on the users selection a candy pill will be despensed through a slide at the bottom of the device. 
+
+- Our device will be made up of a 3D printed Morpheus and cardboard box behind him to store the Pi, camera, motors, and pill dispensors. 
+- The way the interaction will work is when the device is turned on Morpheus will start speaking "This is your last chance, after this there is no turning back. You take the blue pill the story ends and you wake up in your bed and belive whatever you want to belive. You take the red pill you stay in wonderland and I show you how deep the rabit hole goes". 
+- This will promt the user to choose either a red or blue pill from Morpheus's hands. 
+- As the user picks up the pill from Morpheus's hands a camera in the back the box behind Morpheus will detect whether the pill selected is blue or red using a model we trained using trainable machines. 
+- Based on the users selection a candy pill will be despensed through a slide at the bottom of the device. 
 
 Device design: 
 
@@ -246,7 +251,9 @@ Back/inside-
 
 <img width="503" alt="Screen Shot 2021-10-28 at 10 54 17 PM" src="https://user-images.githubusercontent.com/73661058/139366050-552c59a1-0333-4ab1-a440-c647f09ece42.png">
 
-Other experimentation and ideation: 
+Other experimentation and ideations: 
+Major things we considered at this stage were where the camera should be placed for the user to be easily recognize where they should be showing the pill, 
+where and how the pill should be dispensed, and how things should be layed out behind the board. We were ambitious and excited, so there were a lot to be placed behind the board. We brainstormed a lot about how the image recognition would trigger the dispensing and what physical shape will be most appropriate and feasible for our prototype. 
 
 <img width="463" alt="Screen Shot 2021-10-28 at 11 15 58 PM" src="https://user-images.githubusercontent.com/73661058/139369663-5a6a0543-1146-4472-a3a8-3a94be87e219.png">
 
@@ -258,6 +265,7 @@ Other experimentation and ideation:
 
 <img width="871" alt="Screen Shot 2021-10-28 at 11 15 22 PM" src="https://user-images.githubusercontent.com/73661058/139369981-0ad65d32-f152-47de-966a-f07a1d36f2d2.png">
 
+
 ### Part C
 ### Test the interaction prototype
 
@@ -266,9 +274,11 @@ For example:
 1. When does it what it is supposed to do?
     When the user picks up one of the pills, it should be able to detect i) the fact that user has picked up something ii) and the color of the pill
 2. When does it fail?
-    It fails when the user is holding the pill too far from the camera or holding both of them or not showing it to the camera at at all or pill is not visible to from the camera's angle. Also the position of fingers while holding the pill matters as well. 
+    It fails when the user is holding the pill too far from the camera or holding both of them or not showing it to the camera at at all or pill is not visible to from the camera's angle. Sometimes the user's finger and nails will hide the pill shape and color too much so lead to failure. 
+    
 3. When it fails, why does it fail?
-    Because the model is trained in the case where the user is properly holding the pill, visible to the camera, with the right distance. (it cannot be too far)
+    Because the model is trained in the case where the user is properly holding the pill, visible to the camera, with the right distance. In the training images, we held the pill pretty close to the camera, not hiding the pill with fingers. 
+    Also, some failures were due to the low resolution on Pi camera we're using. We assume that RGB layers are not so strong and it did not recognize red so well sometimes. The model that performed very well with the laptop webcam did not show the same accuracy with the Pi camera. 
    
 4. Based on the behavior you have seen, what other scenarios could cause problems?
     The user might not know where the camera is. (I had a laptop and the pi camera on, and it was bit confusing where to look at since the display was on the laptop)
@@ -280,9 +290,16 @@ For example:
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
-1. How bad would they be impacted by a miss classification?
-1. How could change your interactive system to address this?
-1. Are there optimizations you can try to do on your sense-making algorithm.
+An educated user who had prior experiences with some image recognition tools might be aware of the uncertainties caused by lighting, distance, and background situation. But we cannot generalize this. An arbitrary user might not be aware of what affects the performance of image/video recognition. Also, when the device does not response for a long time, the user might notice the uncertainties and try to do something. 
+
+2. How bad would they be impacted by a miss classification?
+In our prototype miss classification would not be bad, the consquence would just be the user getting a red candy instead of a blue candy or vice versa. However if this was the real matrix and Morphues relied on our classifier the conquences of miss classification would be very severe and life changing.  
+
+3. How could change your interactive system to address this?
+We would need to use a more robust classification model to ensure that the model would always easily detect red or blue pills correctly. With our current model we could address this by adding a simple sign that promoted thr user to hold the pill closer to the camera to help mitigate error. 
+
+4. Are there optimizations you can try to do on your sense-making algorithm.
+We can add more images from diverse distance and background settings to the training in the first place for more robust performance of recognition algorithm. We can also add other features to recognize like which way the user reaches out their hand, because the red pill is always going to be placed on the left side(when faced).  
 
 ### Part D
 ### Characterize your own Observant system
@@ -290,18 +307,18 @@ For example:
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
 * What can you use X for?
-Are device can be used for a fun and interactive way to eat red and blue candy. 
+Our device can be used for a fun and interactive way to eat red and blue candy. 
 * What is a good environment for X?
-A good environment would be in a Matrix enthusiasts home, perhaps on their desk or coffee table. Ideally when the interaction takes place the backround will be clear so Morpheus camera can clearly see the red or blue pill.  
+A good environment would be in a Matrix enthusiasts' home, perhaps on their desk or coffee table. Ideally when the interaction takes place the backround will be clear so Morpheus camera can clearly see the red or blue pill.  
 * What is a bad environment for X?
 A Bad environment would be somewhere crowded where the device can not clearly pick up on the detection of the red or blue pill which is essental for the interaction to work correctly. Another bad environmemt would be in ther presents on a non Matrix enthusiasts or Matrix hater. 
-* When will X break?
+* When will X break? / When it breaks how will X break?
 The device will break any of its parts stoped working, the camera, the Pi, or the motors. The device would also break if it was phsyically destroyed, Morpheus was smashed or disasembled from his box set up. Anther way the device could break is if the red and blue pills where taken from Morpheus hands, the user would not know what to do or how to interact with the device. Lastly the device would break if the candy it dispenses runs out. 
-* When it breaks how will X break?
 * What are other properties/behaviors of X?
 The device reenacts a classic sense from the Matrix through audio and user interaction. The device has computer vision and detect red and blue pills. The device can make dispensing decsions based on the sight of red or blue pills. The device dispenses red and blue candy. The devive allows for appreciation of the Matrix. 
 * How does X feel?
-The devices like a plastic 3D model and cardboard. It also feels like delious candy in the users mouth. 
+Physically, the devices gives a mysterious Sci-fi vibe, gives the feel of excitement and curiousity from encountering the moment of truth from the movie Matrix!
+Emotioanlly, it also feels like delious candy in the users mouth. Also the Matrix theme feels nostalgic. From the material, it feels like a plastic 3D model and cardboard.
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
@@ -309,4 +326,25 @@ The devices like a plastic 3D model and cardboard. It also feels like delious ca
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
-**\*\*\*Include a short video demonstrating the finished result.\*\*\***
+Work in progress: 
+![65812233421__840B57E3-99C9-4218-A28B-C75872413866](https://user-images.githubusercontent.com/73661058/140865540-f993295c-e5cd-432b-ab2b-8f6352a18c30.jpg)
+![IMG_7018](https://user-images.githubusercontent.com/73661058/140865548-ef26529e-62b3-4c8f-8b1b-8a7b57b5b9b3.jpg)
+![IMG_7015](https://user-images.githubusercontent.com/73661058/140865560-ed654345-f9a3-4e6e-b65d-f64c55265a5b.jpg)
+![IMG_7015](https://user-images.githubusercontent.com/73661058/140865563-59d3076c-752b-4c9f-a4bf-453f2edb8608.jpg)
+![IMG_6443](https://user-images.githubusercontent.com/73661058/140865568-d628782d-184f-4d96-b1f2-6cde0bd65138.jpg)
+![IMG_6462](https://user-images.githubusercontent.com/42717070/140868721-10375c5a-02c4-4b18-b79d-1d501223c773.jpg)
+
+Final Design: 
+
+Front - 
+![IMG_7021](https://user-images.githubusercontent.com/73661058/140865621-47396c51-e2cb-4664-84d9-7a948315e0f6.jpg)
+
+Back- 
+![IMG_7028](https://user-images.githubusercontent.com/73661058/140865636-b5e1dcbc-5745-459b-866d-98d70d155d37.jpg)
+
+Video-
+
+https://user-images.githubusercontent.com/73661058/140865315-8168582a-f1fa-4041-8eff-4fa0b44ae20b.mov
+
+
+
