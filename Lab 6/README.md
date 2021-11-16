@@ -5,8 +5,8 @@
 1. Pull the new changes from the class interactive-lab-hub. (You should be familiar with this already!)
 2. Install [MQTT Explorer](http://mqtt-explorer.com/) on your laptop.
 3. Readings before class:
-   * [MQTT](#MQTT)
-   * [The Presence Table](https://dl.acm.org/doi/10.1145/1935701.1935800) and [video](https://vimeo.com/15932020)
+   * [MQTT](#MQTT)
+   * [The Presence Table](https://dl.acm.org/doi/10.1145/1935701.1935800) and [video](https://vimeo.com/15932020)
 
 
 ## Overview
@@ -35,7 +35,7 @@ MQTT is a lightweight messaging portal invented in 1999 for low bandwidth networ
 * **Broker** - The central server node that receives all messages and sends them out to the interested clients. Our broker is hosted on the far lab server (Thanks David!) at `farlab.infosci.cornell.edu/8883`. Imagine that the Broker is the messaging center!
 * **Client** - A device that subscribes or publishes information to/on the network.
 * **Topic** - The location data gets published to. These are *hierarchical with subtopics*. For example, If you were making a network of IoT smart bulbs this might look like `home/livingroom/sidelamp/light_status` and `home/livingroom/sidelamp/voltage`. With this setup, the info/updates of the sidelamp's `light_status` and `voltage` will be store in the subtopics. Because we use this broker for a variety of projects you have access to read, write and create subtopics of `IDD`. This means `IDD/ilan/is/a/goof` is a valid topic you can send data messages to.
-*  **Subscribe** - This is a way of telling the client to pay attention to messages the broker sends out on the topic. You can subscribe to a specific topic or subtopics. You can also unsubscribe. Following the previouse example of home IoT smart bulbs, subscribing to `home/livingroom/sidelamp/#` would give you message updates to both the light_status and the voltage.
+*  **Subscribe** - This is a way of telling the client to pay attention to messages the broker sends out on the topic. You can subscribe to a specific topic or subtopics. You can also unsubscribe. Following the previouse example of home IoT smart bulbs, subscribing to `home/livingroom/sidelamp/#` would give you message updates to both the light_status and the voltage.
 * **Publish** - This is a way of sending messages to a topic. Again, with the previouse example, you can set up your IoT smart bulbs to publish info/updates to the topic or subtopic. Also, note that you can publish to topics you do not subscribe to. 
 
 
@@ -63,28 +63,34 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 **Running Examples on Pi**
 
 * Install the packages from `requirements.txt` under a virtual environment, we will continue to use the `circuitpython` environment we setup earlier this semester:
-  ```
-  pi@ixe00:~ $ source circuitpython/bin/activate
-  (circuitpython) pi@ixe00:~ $ cd Interactive-Lab-Hub/Lab\ 6
-  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ pip install -r requirements.txt
-  ```
+  ```
+  pi@ixe00:~ $ source circuitpython/bin/activate
+  (circuitpython) pi@ixe00:~ $ cd Interactive-Lab-Hub/Lab\ 6
+  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ pip install -r requirements.txt
+  ```
 * Run `sender.py`, fill in a topic name (should start with `IDD/`), then start sending messages. You should be able to see them on MQTT Explorer.
-  ```
-  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ python sender.py
-  pi@ReiIDDPi:~/Interactive-Lab-Hub/Lab 6 $ python sender.py
-  >> topic: IDD/ReiTesting
-  now writing to topic IDD/ReiTesting
-  type new-topic to swich topics
-  >> message: testtesttest
-  ...
-  ```
+  ```
+  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ python sender.py
+  pi@ReiIDDPi:~/Interactive-Lab-Hub/Lab 6 $ python sender.py
+  >> topic: IDD/ReiTesting
+  now writing to topic IDD/ReiTesting
+  type new-topic to swich topics
+  >> message: testtesttest
+  ...
+  ```
 * Run `reader.py`, and you should see any messages being published to `IDD/` subtopics.
-  ```
-  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ python reader.py
-  ...
-  ```
+  ```
+  (circuitpython) pi@ixe00:~ Interactive-Lab-Hub/Lab 6 $ python reader.py
+  ...
+  ```
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
+
+1. Messaging app for people to communicate with thier Pi's. This would not be limited to text messasge, it perhaps also include drawings. 
+2. A surveillance system that detects whether there is an intruder trying to break into someones home. At the door of someones home there could be sensors/ cameras to detect suspicious activity and send a message to user and law enforment when such activity is detected. 
+3. A group project collaboration tool. A message could be sent to each contributor when a contributor finish thier part of the project or assignment. 
+4. A group workout tool. This system would keep track of how much each member worked out towrads the group goal. It would notify each member in the group when someone has done work toward the great goal. This would serve to motive group member to exercise. 
+5. Inventory system that notifys users when something is sold from thier phsyical or online store.  
 
 ### Part C
 ### Streaming a Sensor
@@ -107,6 +113,11 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
 
 **\*\*\*Include a picture of your setup here: what did you see on MQTT Explorer?\*\*\***
 
+![45697FCF-BE16-4AAD-B3AD-A7C12B7300FA](https://user-images.githubusercontent.com/73661058/141864424-88550fba-f233-4c17-856b-e6dafa220bba.jpg)
+
+<img width="543" alt="Screen Shot 2021-11-15 at 5 42 52 PM" src="https://user-images.githubusercontent.com/73661058/141864436-223b6b39-6df5-4ced-8d02-cda0abd10e5b.png">
+
+
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
 
@@ -118,9 +129,9 @@ It is with great fortitude and resilience that we shall worship at the altar of 
 The first step on the path to *collective* enlightenment, plug the [APDS-9960 Proximity, Light, RGB, and Gesture Sensor](https://www.adafruit.com/product/3595) into the [MiniPiTFT Display](https://www.adafruit.com/product/4393). You are almost there!
 
 <p float="left">
-  <img src="https://cdn-learn.adafruit.com/assets/assets/000/082/842/large1024/adafruit_products_4393_iso_ORIG_2019_10.jpg" height="150" />
-  <img src="https://cdn-shop.adafruit.com/970x728/4210-02.jpg" height="150">
-  <img src="https://cdn-shop.adafruit.com/970x728/3595-03.jpg" height="150">
+  <img src="https://cdn-learn.adafruit.com/assets/assets/000/082/842/large1024/adafruit_products_4393_iso_ORIG_2019_10.jpg" height="150" />
+  <img src="https://cdn-shop.adafruit.com/970x728/4210-02.jpg" height="150">
+  <img src="https://cdn-shop.adafruit.com/970x728/3595-03.jpg" height="150">
 </p>
 
 
@@ -141,6 +152,9 @@ Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
 
+This code is reflected in displayColor.py
+
+https://user-images.githubusercontent.com/73661058/141871537-41e7503b-0aef-4821-bb60-bacd8d8d7ba3.mov
 
 ### Part E
 ### Make it your own
@@ -155,5 +169,4 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
-<!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
-
+https://user-images.githubusercontent.com/73661058/141887326-bf485fa3-408f-407b-8065-6e23c4dcfef5.mov
