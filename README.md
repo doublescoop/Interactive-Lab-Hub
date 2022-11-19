@@ -15,5 +15,5 @@ Please place links here to the README.md's for each of your labs here:
 
 [Lab 6. Little Interactions Everywhere](Lab%206/)
 
-[Final Project](FinalProject/The Tail of Two Kitties.md)
+[Final Project: Tail of Two Kitties](https://github.com/doublescoop/Interactive-Lab-Hub/blob/438bf07b85cbc144bbeaf30306a7332dac5669e7/FinalProject/The%20Tail%20of%20Two%20Kitties.md)
 
