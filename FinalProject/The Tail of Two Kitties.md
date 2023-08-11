@@ -1,6 +1,9 @@
 # The Tail of Two Kitties
+- Meeting humans at the IDD class:
+https://user-images.githubusercontent.com/42717070/145901099-ba9b7939-6443-43dd-87de-74a6f8c827c9.mov
 
-## Project Description
+
+## What is this project?
 
 This project consists of two interactive kitties that respond in cat-like ways when touched by the user. When interacted with through petting, the cats purr, wag their tails, move their paws, and meow. These two cats are also connected. When both cats are being interacted with at the same time a heart light will turn on, on both the cats and the cats will meow. The goals of this project are to create an emotional experience for users similar to petting a cat and to connect long distance friends through interacting with our cats.
 
@@ -189,12 +192,6 @@ Us with the cats :blush: :
 <img width="517" alt="Screen Shot 2021-12-12 at 11 40 29 PM" src="https://user-images.githubusercontent.com/73661058/145753457-aa2a2e7b-e35a-41ef-ba3f-67a6326bb5cb.png">
 
 ## Showtime!
-
-- Meeting humans at the IDD class:
-
-
-
-https://user-images.githubusercontent.com/42717070/145901099-ba9b7939-6443-43dd-87de-74a6f8c827c9.mov
 
 
 - Purring at the Open Studio:
